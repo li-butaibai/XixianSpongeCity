@@ -9,7 +9,6 @@ import org.apache.storm.jdbc.bolt.AbstractJdbcBolt;
 import org.apache.storm.jdbc.common.Column;
 import org.apache.storm.jdbc.common.ConnectionProvider;
 import org.apache.storm.jdbc.mapper.JdbcMapper;
-import org.apache.storm.shade.org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,9 +19,9 @@ import java.util.*;
  */
 public class JdbcStoreBolt extends AbstractJdbcBolt{
 
-    private Map<Tag, JdbcMapper> mappers;
-    private Map<Tag, String> sqlStatements;
-    private Set<Tag> registeredTags;
+    protected Map<Tag, JdbcMapper> mappers;
+    protected Map<Tag, String> sqlStatements;
+    protected Set<Tag> registeredTags;
     private final static int DEFAULT_QUERY_TIMEOUT_SECS = 10;
     private final Logger logger = LoggerFactory.getLogger(JdbcStoreBolt.class);
 
@@ -67,12 +66,8 @@ public class JdbcStoreBolt extends AbstractJdbcBolt{
 
     public void execute(Tuple tuple) {
 
-        logger.warn("Time: {}. Received Tuple: {} and processed time is {}.", new DateTime().toLocalDateTime().toString(),
-                tuple.getValues().toString(), new DateTime(tuple.getLongByField("datetime")).toLocalDateTime().toString());
-
         collector.ack(tuple);
 
-        final Tuple myTuple = tuple;
         final Tag tag = (Tag) tuple.getValueByField("tag");
         if (tag != null && isRegistered(tag)) {
             List<Column> columns = mappers.get(tag).getColumns(tuple);

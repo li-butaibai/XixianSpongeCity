@@ -1,0 +1,76 @@
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[Thread-12-EventHubSpout] INFO org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+[Thread-16-EventHubSpout] INFO org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+[Thread-30-EventHubSpout] INFO org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+[Thread-18-EventHubSpout] INFO org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+[Thread-16-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+[Thread-22-JdbcStoreBolt] INFO com.zaxxer.hikari.HikariDataSource - HikariCP pool HikariPool-0 is starting.
+[Thread-12-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+[Thread-30-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+[Thread-18-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[Thread-16-EventHubSpout] INFO org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+[Thread-12-EventHubSpout] INFO org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+[Thread-30-EventHubSpout] INFO org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+[Thread-18-EventHubSpout] INFO org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+[Thread-16-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+[Thread-30-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+[Thread-12-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+[Thread-18-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+[Thread-22-JdbcStoreBolt] INFO com.zaxxer.hikari.HikariDataSource - HikariCP pool HikariPool-0 is starting.
+[SyncThread:0] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1081)
+	at org.apache.storm.shade.org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:404)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:169)
+[SyncThread:0] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1081)
+	at org.apache.storm.shade.org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:170)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:169)
+[SyncThread:0] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1081)
+	at org.apache.storm.shade.org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:404)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:169)
+[SyncThread:0] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1081)
+	at org.apache.storm.shade.org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:404)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:169)
+[SyncThread:0] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1081)
+	at org.apache.storm.shade.org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:404)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:169)
+[Thread-16-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: SUSPENDED
+[Thread-18-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: SUSPENDED
+[Thread-12-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: SUSPENDED
+[Thread-30-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: SUSPENDED
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
