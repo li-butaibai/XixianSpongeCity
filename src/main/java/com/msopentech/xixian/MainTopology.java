@@ -5,6 +5,7 @@ import backtype.storm.LocalCluster;
 import backtype.storm.StormSubmitter;
 import backtype.storm.generated.StormTopology;
 import backtype.storm.topology.TopologyBuilder;
+import backtype.storm.tuple.Fields;
 import com.microsoft.eventhubs.spout.EventHubSpout;
 import com.microsoft.eventhubs.spout.EventHubSpoutConfig;
 import com.msopentech.xixian.bolt.DeviceStateDetectBolt;
@@ -73,7 +74,7 @@ public class MainTopology {
         schemaColumns.add(new Column("deviceid", Types.VARCHAR));
         schemaColumns.add(new Column("datatime", Types.TIMESTAMP));
         schemaColumns.add(new Column("datatype_id", Types.INTEGER));
-        schemaColumns.add(new Column("datavalue", Types.VARCHAR));
+        schemaColumns.add(new Column("datavalue", Types.DOUBLE));
         SimpleJdbcMapper dataMapper = new SimpleJdbcMapper(schemaColumns);
         jdbcStoreBolt.register(Tag.Measurements, dataMapper, DATA_INSERT_SQL);
 
@@ -128,7 +129,7 @@ public class MainTopology {
         builder.setBolt("GatewayBolt", new GatewayBolt(), numWorkers)
                 .localOrShuffleGrouping("EventHubSpout");
         builder.setBolt("DeviceStateDetectBolt",stateDetectBolt, 2)
-                .localOrShuffleGrouping("GatewayBolt", GatewayBolt.DEVICE_ID_STREAM);
+                .fieldsGrouping("GatewayBolt", GatewayBolt.DEVICE_ID_STREAM, new Fields("id"));
         builder.setBolt("JdbcStoreBolt", jdbcStoreBolt, 1)
                 .localOrShuffleGrouping("GatewayBolt", GatewayBolt.MEASUREMENTS_STREAM)
                 .localOrShuffleGrouping("DeviceStateDetectBolt", DeviceStateDetectBolt.ALERT_INSERT_STREAM)
@@ -141,6 +142,7 @@ public class MainTopology {
     public static void main(String[] args) throws Exception {
         MainTopology mainTopology = new MainTopology();
         mainTopology.runScenario(args);
+
     }
 
     private void runScenario(String[] args) throws Exception {

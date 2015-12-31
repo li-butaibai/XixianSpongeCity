@@ -113,7 +113,7 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
         String time =  new DateTime().toLocalDateTime().toString();
         Values values = new Values(Tag.DisactiveAlert, id, TITLE_ALERT,
                 String.format(COMMENT_OFFLINE_FORMAT, id, time), new Date().getTime(),
-                0, State.DISACTIVE, DEFAULT_LEVEL);
+                0, State.DISACTIVE.toString(), DEFAULT_LEVEL);
         collector.emit(ALERT_INSERT_STREAM, values);
     }
 
@@ -121,9 +121,10 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
         String time =  new DateTime().toLocalDateTime().toString();
         Values values = new Values(Tag.ActiveAlert, id, TITLE_ALERT,
                 String.format(COMMENT_OFFLINE_FORMAT, id, time), 0,
-                new Date().getTime(), State.ACTIVE, DEFAULT_LEVEL);
+                new Date().getTime(), State.ACTIVE.toString(), DEFAULT_LEVEL);
         collector.emit(ALERT_UPDATE_STREAM, values);
     }
+
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {

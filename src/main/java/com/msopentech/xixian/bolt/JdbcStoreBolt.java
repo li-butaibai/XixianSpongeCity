@@ -22,8 +22,8 @@ public class JdbcStoreBolt extends AbstractJdbcBolt{
     protected Map<Tag, JdbcMapper> mappers;
     protected Map<Tag, String> sqlStatements;
     protected Set<Tag> registeredTags;
-    private final static int DEFAULT_QUERY_TIMEOUT_SECS = 10;
-    private final Logger logger = LoggerFactory.getLogger(JdbcStoreBolt.class);
+    private static final int DEFAULT_QUERY_TIMEOUT_SECS = 10;
+    private static final Logger LOGGER = LoggerFactory.getLogger(JdbcStoreBolt.class);
 
 
     public JdbcStoreBolt(ConnectionProvider connectionProvider, int timeoutSecs) {
@@ -66,6 +66,7 @@ public class JdbcStoreBolt extends AbstractJdbcBolt{
 
     public void execute(Tuple tuple) {
 
+        LOGGER.debug("Receive tuple: {} ", tuple);
         collector.ack(tuple);
 
         final Tag tag = (Tag) tuple.getValueByField("tag");

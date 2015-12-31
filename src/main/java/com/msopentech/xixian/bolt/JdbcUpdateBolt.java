@@ -40,7 +40,7 @@ public class JdbcUpdateBolt extends JdbcStoreBolt {
 
     private String generateSQLStatement(Tag tag, List<Column> columns) {
         String sqlStatement = sqlStatements.get(tag);
-        sqlStatement.replace("?", "%s");
+        sqlStatement = sqlStatement.replace("?", "%s");
         return String.format(sqlStatement, columns);
     }
 

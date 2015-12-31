@@ -74,3 +74,1044 @@ java.nio.channels.CancelledKeyException
 [main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
 [main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
 [main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[Thread-18-EventHubSpout] INFO org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+[Thread-22-EventHubSpout] INFO org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+[Thread-32-EventHubSpout] INFO org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+[Thread-36-EventHubSpout] INFO org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+[Thread-18-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+[Thread-36-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+[Thread-22-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+[Thread-32-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+[Thread-26-JdbcStoreBolt] INFO com.zaxxer.hikari.HikariDataSource - HikariCP pool HikariPool-1 is starting.
+[Thread-12-JdbcUpdateBolt] INFO com.zaxxer.hikari.HikariDataSource - HikariCP pool HikariPool-0 is starting.
+[Thread-26-JdbcStoreBolt] ERROR com.zaxxer.hikari.pool.HikariPool - JDBC4 Connection.isValid() method not supported, connection test query must be configured
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[Thread-12-JdbcUpdateBolt] ERROR com.zaxxer.hikari.pool.HikariPool - JDBC4 Connection.isValid() method not supported, connection test query must be configured
+[Thread-16-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: SUSPENDED
+[Thread-12-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: SUSPENDED
+[Thread-30-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: SUSPENDED
+[Thread-18-EventHubSpout-EventThread] INFO org.apache.curator.framework.state.ConnectionStateManager - State change: SUSPENDED
+[Thread-30-EventHubSpout] ERROR com.microsoft.eventhubs.client.EventHubReceiver - Error{condition=detach-forced,description=Force detach the link because the session is remotely ended.}
+[Thread-16-EventHubSpout] ERROR com.microsoft.eventhubs.client.EventHubReceiver - Error{condition=detach-forced,description=Force detach the link because the session is remotely ended.}
+[Thread-12-EventHubSpout] ERROR com.microsoft.eventhubs.client.EventHubReceiver - Error{condition=detach-forced,description=Force detach the link because the session is remotely ended.}
+[Thread-30-EventHubSpout] ERROR backtype.storm.util - Async loop died!
+java.lang.RuntimeException: Error{condition=detach-forced,description=Force detach the link because the session is remotely ended.}
+	at com.microsoft.eventhubs.client.EventHubReceiver.checkError(EventHubReceiver.java:123)
+	at com.microsoft.eventhubs.client.EventHubReceiver.receive(EventHubReceiver.java:86)
+	at com.microsoft.eventhubs.spout.EventHubReceiverImpl.receive(EventHubReceiverImpl.java:111)
+	at com.microsoft.eventhubs.spout.PartitionManager.receive(PartitionManager.java:56)
+	at com.microsoft.eventhubs.spout.EventHubSpout.nextTuple(EventHubSpout.java:187)
+	at backtype.storm.daemon.executor$fn__5624$fn__5639$fn__5670.invoke(executor.clj:607)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+[Thread-30-EventHubSpout] ERROR backtype.storm.daemon.executor - 
+java.lang.RuntimeException: Error{condition=detach-forced,description=Force detach the link because the session is remotely ended.}
+	at com.microsoft.eventhubs.client.EventHubReceiver.checkError(EventHubReceiver.java:123)
+	at com.microsoft.eventhubs.client.EventHubReceiver.receive(EventHubReceiver.java:86)
+	at com.microsoft.eventhubs.spout.EventHubReceiverImpl.receive(EventHubReceiverImpl.java:111)
+	at com.microsoft.eventhubs.spout.PartitionManager.receive(PartitionManager.java:56)
+	at com.microsoft.eventhubs.spout.EventHubSpout.nextTuple(EventHubSpout.java:187)
+	at backtype.storm.daemon.executor$fn__5624$fn__5639$fn__5670.invoke(executor.clj:607)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+[Thread-12-EventHubSpout] ERROR backtype.storm.util - Async loop died!
+java.lang.RuntimeException: Error{condition=detach-forced,description=Force detach the link because the session is remotely ended.}
+	at com.microsoft.eventhubs.client.EventHubReceiver.checkError(EventHubReceiver.java:123)
+	at com.microsoft.eventhubs.client.EventHubReceiver.receive(EventHubReceiver.java:86)
+	at com.microsoft.eventhubs.spout.EventHubReceiverImpl.receive(EventHubReceiverImpl.java:111)
+	at com.microsoft.eventhubs.spout.PartitionManager.receive(PartitionManager.java:56)
+	at com.microsoft.eventhubs.spout.EventHubSpout.nextTuple(EventHubSpout.java:187)
+	at backtype.storm.daemon.executor$fn__5624$fn__5639$fn__5670.invoke(executor.clj:607)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+[Thread-16-EventHubSpout] ERROR backtype.storm.util - Async loop died!
+java.lang.RuntimeException: Error{condition=detach-forced,description=Force detach the link because the session is remotely ended.}
+	at com.microsoft.eventhubs.client.EventHubReceiver.checkError(EventHubReceiver.java:123)
+	at com.microsoft.eventhubs.client.EventHubReceiver.receive(EventHubReceiver.java:86)
+	at com.microsoft.eventhubs.spout.EventHubReceiverImpl.receive(EventHubReceiverImpl.java:111)
+	at com.microsoft.eventhubs.spout.PartitionManager.receive(PartitionManager.java:56)
+	at com.microsoft.eventhubs.spout.EventHubSpout.nextTuple(EventHubSpout.java:187)
+	at backtype.storm.daemon.executor$fn__5624$fn__5639$fn__5670.invoke(executor.clj:607)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+[Thread-12-EventHubSpout] ERROR backtype.storm.daemon.executor - 
+java.lang.RuntimeException: Error{condition=detach-forced,description=Force detach the link because the session is remotely ended.}
+	at com.microsoft.eventhubs.client.EventHubReceiver.checkError(EventHubReceiver.java:123)
+	at com.microsoft.eventhubs.client.EventHubReceiver.receive(EventHubReceiver.java:86)
+	at com.microsoft.eventhubs.spout.EventHubReceiverImpl.receive(EventHubReceiverImpl.java:111)
+	at com.microsoft.eventhubs.spout.PartitionManager.receive(PartitionManager.java:56)
+	at com.microsoft.eventhubs.spout.EventHubSpout.nextTuple(EventHubSpout.java:187)
+	at backtype.storm.daemon.executor$fn__5624$fn__5639$fn__5670.invoke(executor.clj:607)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+[Thread-16-EventHubSpout] ERROR backtype.storm.daemon.executor - 
+java.lang.RuntimeException: Error{condition=detach-forced,description=Force detach the link because the session is remotely ended.}
+	at com.microsoft.eventhubs.client.EventHubReceiver.checkError(EventHubReceiver.java:123)
+	at com.microsoft.eventhubs.client.EventHubReceiver.receive(EventHubReceiver.java:86)
+	at com.microsoft.eventhubs.spout.EventHubReceiverImpl.receive(EventHubReceiverImpl.java:111)
+	at com.microsoft.eventhubs.spout.PartitionManager.receive(PartitionManager.java:56)
+	at com.microsoft.eventhubs.spout.EventHubSpout.nextTuple(EventHubSpout.java:187)
+	at backtype.storm.daemon.executor$fn__5624$fn__5639$fn__5670.invoke(executor.clj:607)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+[Thread-36-EventHubSpout] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2001) and timeout (15000) / elapsed (28600)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getZooKeeper(CuratorFrameworkImpl.java:488)
+	at org.apache.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:172)
+	at org.apache.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:161)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107)
+	at org.apache.curator.framework.imps.ExistsBuilderImpl.pathInForeground(ExistsBuilderImpl.java:157)
+	at org.apache.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:148)
+	at org.apache.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:36)
+	at com.microsoft.eventhubs.spout.ZookeeperStateStore.saveData(ZookeeperStateStore.java:65)
+	at com.microsoft.eventhubs.spout.SimplePartitionManager.checkpoint(SimplePartitionManager.java:88)
+	at com.microsoft.eventhubs.spout.EventHubSpout.checkpoint(EventHubSpout.java:260)
+	at com.microsoft.eventhubs.spout.EventHubSpout.checkpointIfNeeded(EventHubSpout.java:252)
+	at com.microsoft.eventhubs.spout.EventHubSpout.nextTuple(EventHubSpout.java:206)
+	at backtype.storm.daemon.executor$fn__5624$fn__5639$fn__5670.invoke(executor.clj:607)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+[CuratorFramework-0] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2001) and timeout (15000) / elapsed (31593)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:807)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[CuratorFramework-0] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2001) and timeout (15000) / elapsed (31584)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:807)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[CuratorFramework-0] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2001) and timeout (15000) / elapsed (31566)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:807)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[CuratorFramework-0] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2001) and timeout (15000) / elapsed (33047)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:807)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[CuratorFramework-0] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2001) and timeout (15000) / elapsed (33034)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:807)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[CuratorFramework-0] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2001) and timeout (15000) / elapsed (33022)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:807)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[CuratorFramework-0] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2001) and timeout (15000) / elapsed (34695)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:807)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[CuratorFramework-0] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2001) and timeout (15000) / elapsed (34707)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:807)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[CuratorFramework-0] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2001) and timeout (15000) / elapsed (34699)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:807)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[CuratorFramework-0] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2001) and timeout (15000) / elapsed (39672)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:807)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[CuratorFramework-0] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2001) and timeout (15000) / elapsed (39660)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:807)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[CuratorFramework-0] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2001) and timeout (15000) / elapsed (39647)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:807)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[CuratorFramework-0] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2001) and timeout (15000) / elapsed (42151)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:807)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[CuratorFramework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl - Background operation retry gave up
+org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:99)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.checkBackgroundRetry(CuratorFrameworkImpl.java:710)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:827)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[CuratorFramework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl - Background retry gave up
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:807)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[Thread-49] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[SyncThread:0] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1081)
+	at org.apache.storm.shade.org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:404)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:169)
+[Thread-48] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[Thread-47] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[CuratorFramework-0-EventThread] ERROR org.apache.storm.shade.org.apache.curator.framework.imps.CuratorFrameworkImpl - Background operation retry gave up
+org.apache.storm.shade.org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.storm.shade.org.apache.zookeeper.KeeperException.create(KeeperException.java:99)
+	at org.apache.storm.shade.org.apache.curator.framework.imps.CuratorFrameworkImpl.checkBackgroundRetry(CuratorFrameworkImpl.java:710)
+	at org.apache.storm.shade.org.apache.curator.framework.imps.CuratorFrameworkImpl.processBackgroundOperation(CuratorFrameworkImpl.java:510)
+	at org.apache.storm.shade.org.apache.curator.framework.imps.BackgroundSyncImpl$1.processResult(BackgroundSyncImpl.java:50)
+	at org.apache.storm.shade.org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:609)
+	at org.apache.storm.shade.org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:498)
+[Thread-12-EventHubSpout] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxnFactory - Thread Thread[Thread-12-EventHubSpout,5,main] died
+java.lang.RuntimeException: java.lang.InterruptedException
+	at backtype.storm.util$wrap_in_runtime.invoke(util.clj:49)
+	at backtype.storm.zookeeper$exists_node_QMARK_$fn__4306.invoke(zookeeper.clj:103)
+	at backtype.storm.zookeeper$exists_node_QMARK_.invoke(zookeeper.clj:99)
+	at backtype.storm.zookeeper$mkdirs.invoke(zookeeper.clj:115)
+	at backtype.storm.cluster$mk_distributed_cluster_state$reify__4580.mkdirs(cluster.clj:130)
+	at backtype.storm.cluster$mk_storm_cluster_state$reify__5120.report_error(cluster.clj:461)
+	at backtype.storm.daemon.executor$throttled_report_error_fn$fn__5469.invoke(executor.clj:193)
+	at backtype.storm.daemon.executor$mk_executor_data$fn__5523$fn__5524.invoke(executor.clj:256)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:489)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at org.apache.storm.shade.org.apache.zookeeper.ClientCnxn.submitRequest(ClientCnxn.java:1342)
+	at org.apache.storm.shade.org.apache.zookeeper.ZooKeeper.exists(ZooKeeper.java:1040)
+	at org.apache.storm.shade.org.apache.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:172)
+	at org.apache.storm.shade.org.apache.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:161)
+	at org.apache.storm.shade.org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107)
+	at org.apache.storm.shade.org.apache.curator.framework.imps.ExistsBuilderImpl.pathInForeground(ExistsBuilderImpl.java:157)
+	at org.apache.storm.shade.org.apache.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:148)
+	at org.apache.storm.shade.org.apache.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:36)
+	at backtype.storm.zookeeper$exists_node_QMARK_$fn__4306.invoke(zookeeper.clj:102)
+	... 9 more
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[Thread-26-JdbcStoreBolt] ERROR com.zaxxer.hikari.pool.HikariPool - JDBC4 Connection.isValid() method not supported, connection test query must be configured
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[Thread-12-JdbcUpdateBolt] ERROR com.zaxxer.hikari.pool.HikariPool - JDBC4 Connection.isValid() method not supported, connection test query must be configured
+[SyncThread:0] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1081)
+	at org.apache.storm.shade.org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:404)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.flush(SyncRequestProcessor.java:200)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:131)
+[SyncThread:0] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1081)
+	at org.apache.storm.shade.org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:170)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.flush(SyncRequestProcessor.java:200)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:131)
+[SyncThread:0] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1081)
+	at org.apache.storm.shade.org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:404)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:169)
+[Thread-47] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[SyncThread:0] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1081)
+	at org.apache.storm.shade.org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:170)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:169)
+[Thread-49] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[Thread-26-JdbcStoreBolt] ERROR backtype.storm.util - Async loop died!
+java.lang.RuntimeException: java.lang.NullPointerException
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:135)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchWhenAvailable(DisruptorQueue.java:106)
+	at backtype.storm.disruptor$consume_batch_when_available.invoke(disruptor.clj:80)
+	at backtype.storm.daemon.executor$fn__5694$fn__5707$fn__5758.invoke(executor.clj:819)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at org.apache.storm.jdbc.mapper.SimpleJdbcMapper.getColumns(SimpleJdbcMapper.java:87)
+	at com.msopentech.xixian.bolt.JdbcStoreBolt.execute(JdbcStoreBolt.java:73)
+	at backtype.storm.daemon.executor$fn__5694$tuple_action_fn__5696.invoke(executor.clj:690)
+	at backtype.storm.daemon.executor$mk_task_receiver$fn__5615.invoke(executor.clj:436)
+	at backtype.storm.disruptor$clojure_handler$reify__5189.onEvent(disruptor.clj:58)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:132)
+	... 6 more
+[Thread-26-JdbcStoreBolt] ERROR backtype.storm.daemon.executor - 
+java.lang.RuntimeException: java.lang.NullPointerException
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:135)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchWhenAvailable(DisruptorQueue.java:106)
+	at backtype.storm.disruptor$consume_batch_when_available.invoke(disruptor.clj:80)
+	at backtype.storm.daemon.executor$fn__5694$fn__5707$fn__5758.invoke(executor.clj:819)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at org.apache.storm.jdbc.mapper.SimpleJdbcMapper.getColumns(SimpleJdbcMapper.java:87)
+	at com.msopentech.xixian.bolt.JdbcStoreBolt.execute(JdbcStoreBolt.java:73)
+	at backtype.storm.daemon.executor$fn__5694$tuple_action_fn__5696.invoke(executor.clj:690)
+	at backtype.storm.daemon.executor$mk_task_receiver$fn__5615.invoke(executor.clj:436)
+	at backtype.storm.disruptor$clojure_handler$reify__5189.onEvent(disruptor.clj:58)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:132)
+	... 6 more
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxnFactory - Thread Thread[main,5,main] died
+java.lang.IllegalArgumentException: Illegal pattern character 'T'
+	at java.text.SimpleDateFormat.compile(SimpleDateFormat.java:826)
+	at java.text.SimpleDateFormat.initialize(SimpleDateFormat.java:634)
+	at java.text.SimpleDateFormat.<init>(SimpleDateFormat.java:605)
+	at java.text.SimpleDateFormat.<init>(SimpleDateFormat.java:580)
+	at com.msopentech.xixian.MainTopology.main(MainTopology.java:147)
+[Thread-12-JdbcUpdateBolt] ERROR com.zaxxer.hikari.pool.HikariPool - JDBC4 Connection.isValid() method not supported, connection test query must be configured
+[Thread-47] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[Thread-26-JdbcStoreBolt] ERROR backtype.storm.util - Async loop died!
+java.lang.RuntimeException: java.lang.NullPointerException
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:135)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchWhenAvailable(DisruptorQueue.java:106)
+	at backtype.storm.disruptor$consume_batch_when_available.invoke(disruptor.clj:80)
+	at backtype.storm.daemon.executor$fn__5694$fn__5707$fn__5758.invoke(executor.clj:819)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at org.apache.storm.jdbc.mapper.SimpleJdbcMapper.getColumns(SimpleJdbcMapper.java:87)
+	at com.msopentech.xixian.bolt.JdbcStoreBolt.execute(JdbcStoreBolt.java:73)
+	at backtype.storm.daemon.executor$fn__5694$tuple_action_fn__5696.invoke(executor.clj:690)
+	at backtype.storm.daemon.executor$mk_task_receiver$fn__5615.invoke(executor.clj:436)
+	at backtype.storm.disruptor$clojure_handler$reify__5189.onEvent(disruptor.clj:58)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:132)
+	... 6 more
+[Thread-26-JdbcStoreBolt] ERROR backtype.storm.daemon.executor - 
+java.lang.RuntimeException: java.lang.NullPointerException
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:135)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchWhenAvailable(DisruptorQueue.java:106)
+	at backtype.storm.disruptor$consume_batch_when_available.invoke(disruptor.clj:80)
+	at backtype.storm.daemon.executor$fn__5694$fn__5707$fn__5758.invoke(executor.clj:819)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at org.apache.storm.jdbc.mapper.SimpleJdbcMapper.getColumns(SimpleJdbcMapper.java:87)
+	at com.msopentech.xixian.bolt.JdbcStoreBolt.execute(JdbcStoreBolt.java:73)
+	at backtype.storm.daemon.executor$fn__5694$tuple_action_fn__5696.invoke(executor.clj:690)
+	at backtype.storm.daemon.executor$mk_task_receiver$fn__5615.invoke(executor.clj:436)
+	at backtype.storm.disruptor$clojure_handler$reify__5189.onEvent(disruptor.clj:58)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:132)
+	... 6 more
+[Thread-26-JdbcStoreBolt] ERROR backtype.storm.util - Halting process: ("Worker died")
+java.lang.RuntimeException: ("Worker died")
+	at backtype.storm.util$exit_process_BANG_.doInvoke(util.clj:336)
+	at clojure.lang.RestFn.invoke(RestFn.java:423)
+	at backtype.storm.daemon.worker$fn__7184$fn__7185.invoke(worker.clj:532)
+	at backtype.storm.daemon.executor$mk_executor_data$fn__5523$fn__5524.invoke(executor.clj:261)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:489)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+[main] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxnFactory - Thread Thread[main,5,main] died
+java.text.ParseException: Unparseable date: "2015-12-30T14:14:46.995+0800"
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.msopentech.xixian.MainTopology.main(MainTopology.java:148)
+[Thread-12-JdbcUpdateBolt] ERROR com.zaxxer.hikari.pool.HikariPool - JDBC4 Connection.isValid() method not supported, connection test query must be configured
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxnFactory - Thread Thread[main,5,main] died
+java.text.ParseException: Unparseable date: "2015-12-30T14:14:46.995+0800"
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.msopentech.xixian.MainTopology.main(MainTopology.java:148)
+[Thread-12-JdbcUpdateBolt] ERROR com.zaxxer.hikari.pool.HikariPool - JDBC4 Connection.isValid() method not supported, connection test query must be configured
+[Thread-47] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[SyncThread:0] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1081)
+	at org.apache.storm.shade.org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:404)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.flush(SyncRequestProcessor.java:200)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:131)
+[SyncThread:0] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1081)
+	at org.apache.storm.shade.org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:404)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.flush(SyncRequestProcessor.java:200)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:131)
+[SyncThread:0] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1081)
+	at org.apache.storm.shade.org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:170)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.flush(SyncRequestProcessor.java:200)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:131)
+[SyncThread:0] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1081)
+	at org.apache.storm.shade.org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:404)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.flush(SyncRequestProcessor.java:200)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:131)
+[SyncThread:0] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1081)
+	at org.apache.storm.shade.org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:170)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.flush(SyncRequestProcessor.java:200)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:131)
+[SyncThread:0] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1081)
+	at org.apache.storm.shade.org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:170)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.flush(SyncRequestProcessor.java:200)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:131)
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[Thread-26-JdbcStoreBolt] ERROR com.zaxxer.hikari.pool.HikariPool - JDBC4 Connection.isValid() method not supported, connection test query must be configured
+[Thread-26-JdbcStoreBolt] ERROR backtype.storm.util - Async loop died!
+java.lang.RuntimeException: java.lang.ClassCastException: java.util.Date cannot be cast to java.lang.Long
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:135)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchWhenAvailable(DisruptorQueue.java:106)
+	at backtype.storm.disruptor$consume_batch_when_available.invoke(disruptor.clj:80)
+	at backtype.storm.daemon.executor$fn__5694$fn__5707$fn__5758.invoke(executor.clj:819)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassCastException: java.util.Date cannot be cast to java.lang.Long
+	at backtype.storm.tuple.TupleImpl.getLongByField(TupleImpl.java:161)
+	at org.apache.storm.jdbc.mapper.SimpleJdbcMapper.getColumns(SimpleJdbcMapper.java:86)
+	at com.msopentech.xixian.bolt.JdbcStoreBolt.execute(JdbcStoreBolt.java:73)
+	at backtype.storm.daemon.executor$fn__5694$tuple_action_fn__5696.invoke(executor.clj:690)
+	at backtype.storm.daemon.executor$mk_task_receiver$fn__5615.invoke(executor.clj:436)
+	at backtype.storm.disruptor$clojure_handler$reify__5189.onEvent(disruptor.clj:58)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:132)
+	... 6 more
+[Thread-26-JdbcStoreBolt] ERROR backtype.storm.daemon.executor - 
+java.lang.RuntimeException: java.lang.ClassCastException: java.util.Date cannot be cast to java.lang.Long
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:135)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchWhenAvailable(DisruptorQueue.java:106)
+	at backtype.storm.disruptor$consume_batch_when_available.invoke(disruptor.clj:80)
+	at backtype.storm.daemon.executor$fn__5694$fn__5707$fn__5758.invoke(executor.clj:819)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassCastException: java.util.Date cannot be cast to java.lang.Long
+	at backtype.storm.tuple.TupleImpl.getLongByField(TupleImpl.java:161)
+	at org.apache.storm.jdbc.mapper.SimpleJdbcMapper.getColumns(SimpleJdbcMapper.java:86)
+	at com.msopentech.xixian.bolt.JdbcStoreBolt.execute(JdbcStoreBolt.java:73)
+	at backtype.storm.daemon.executor$fn__5694$tuple_action_fn__5696.invoke(executor.clj:690)
+	at backtype.storm.daemon.executor$mk_task_receiver$fn__5615.invoke(executor.clj:436)
+	at backtype.storm.disruptor$clojure_handler$reify__5189.onEvent(disruptor.clj:58)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:132)
+	... 6 more
+[CuratorFramework-0] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2000) and timeout (15000) / elapsed (16125)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:807)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[CuratorFramework-0] ERROR org.apache.storm.shade.org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2000/storm) and timeout (15000) / elapsed (16117)
+org.apache.storm.shade.org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.storm.shade.org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.storm.shade.org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.storm.shade.org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.storm.shade.org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:807)
+	at org.apache.storm.shade.org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.storm.shade.org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.storm.shade.org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[Thread-36-EventHubSpout] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2000) and timeout (15000) / elapsed (16126)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getZooKeeper(CuratorFrameworkImpl.java:488)
+	at org.apache.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:172)
+	at org.apache.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:161)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107)
+	at org.apache.curator.framework.imps.ExistsBuilderImpl.pathInForeground(ExistsBuilderImpl.java:157)
+	at org.apache.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:148)
+	at org.apache.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:36)
+	at com.microsoft.eventhubs.spout.ZookeeperStateStore.saveData(ZookeeperStateStore.java:65)
+	at com.microsoft.eventhubs.spout.SimplePartitionManager.checkpoint(SimplePartitionManager.java:88)
+	at com.microsoft.eventhubs.spout.EventHubSpout.checkpoint(EventHubSpout.java:260)
+	at com.microsoft.eventhubs.spout.EventHubSpout.checkpointIfNeeded(EventHubSpout.java:252)
+	at com.microsoft.eventhubs.spout.EventHubSpout.nextTuple(EventHubSpout.java:206)
+	at backtype.storm.daemon.executor$fn__5624$fn__5639$fn__5670.invoke(executor.clj:607)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+[CuratorFramework-0] ERROR org.apache.storm.shade.org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2000/storm) and timeout (15000) / elapsed (16108)
+org.apache.storm.shade.org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.storm.shade.org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198)
+	at org.apache.storm.shade.org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.storm.shade.org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.storm.shade.org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:807)
+	at org.apache.storm.shade.org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:793)
+	at org.apache.storm.shade.org.apache.curator.framework.imps.CuratorFrameworkImpl.access$400(CuratorFrameworkImpl.java:57)
+	at org.apache.storm.shade.org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:275)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[SyncThread:0] ERROR org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.storm.shade.org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1081)
+	at org.apache.storm.shade.org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:404)
+	at org.apache.storm.shade.org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:169)
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[Thread-26-JdbcStoreBolt] ERROR com.zaxxer.hikari.pool.HikariPool - JDBC4 Connection.isValid() method not supported, connection test query must be configured
+[Thread-47] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[Thread-49] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[Thread-51] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[Thread-26-JdbcStoreBolt] ERROR backtype.storm.util - Async loop died!
+java.lang.RuntimeException: java.lang.ClassCastException: com.msopentech.xixian.DateType cannot be cast to java.lang.Integer
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:135)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchWhenAvailable(DisruptorQueue.java:106)
+	at backtype.storm.disruptor$consume_batch_when_available.invoke(disruptor.clj:80)
+	at backtype.storm.daemon.executor$fn__5694$fn__5707$fn__5758.invoke(executor.clj:819)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassCastException: com.msopentech.xixian.DateType cannot be cast to java.lang.Integer
+	at backtype.storm.tuple.TupleImpl.getIntegerByField(TupleImpl.java:157)
+	at org.apache.storm.jdbc.mapper.SimpleJdbcMapper.getColumns(SimpleJdbcMapper.java:62)
+	at com.msopentech.xixian.bolt.JdbcStoreBolt.execute(JdbcStoreBolt.java:73)
+	at backtype.storm.daemon.executor$fn__5694$tuple_action_fn__5696.invoke(executor.clj:690)
+	at backtype.storm.daemon.executor$mk_task_receiver$fn__5615.invoke(executor.clj:436)
+	at backtype.storm.disruptor$clojure_handler$reify__5189.onEvent(disruptor.clj:58)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:132)
+	... 6 more
+[Thread-26-JdbcStoreBolt] ERROR backtype.storm.daemon.executor - 
+java.lang.RuntimeException: java.lang.ClassCastException: com.msopentech.xixian.DateType cannot be cast to java.lang.Integer
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:135)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchWhenAvailable(DisruptorQueue.java:106)
+	at backtype.storm.disruptor$consume_batch_when_available.invoke(disruptor.clj:80)
+	at backtype.storm.daemon.executor$fn__5694$fn__5707$fn__5758.invoke(executor.clj:819)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassCastException: com.msopentech.xixian.DateType cannot be cast to java.lang.Integer
+	at backtype.storm.tuple.TupleImpl.getIntegerByField(TupleImpl.java:157)
+	at org.apache.storm.jdbc.mapper.SimpleJdbcMapper.getColumns(SimpleJdbcMapper.java:62)
+	at com.msopentech.xixian.bolt.JdbcStoreBolt.execute(JdbcStoreBolt.java:73)
+	at backtype.storm.daemon.executor$fn__5694$tuple_action_fn__5696.invoke(executor.clj:690)
+	at backtype.storm.daemon.executor$mk_task_receiver$fn__5615.invoke(executor.clj:436)
+	at backtype.storm.disruptor$clojure_handler$reify__5189.onEvent(disruptor.clj:58)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:132)
+	... 6 more
+[Thread-26-JdbcStoreBolt] ERROR backtype.storm.util - Halting process: ("Worker died")
+java.lang.RuntimeException: ("Worker died")
+	at backtype.storm.util$exit_process_BANG_.doInvoke(util.clj:336)
+	at clojure.lang.RestFn.invoke(RestFn.java:423)
+	at backtype.storm.daemon.worker$fn__7184$fn__7185.invoke(worker.clj:532)
+	at backtype.storm.daemon.executor$mk_executor_data$fn__5523$fn__5524.invoke(executor.clj:261)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:489)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[Thread-26-JdbcStoreBolt] ERROR com.zaxxer.hikari.pool.HikariPool - JDBC4 Connection.isValid() method not supported, connection test query must be configured
+[Thread-47] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[Thread-49] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[Thread-26-JdbcStoreBolt] ERROR backtype.storm.util - Async loop died!
+java.lang.RuntimeException: java.lang.ClassCastException: java.lang.Double cannot be cast to java.lang.String
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:135)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchWhenAvailable(DisruptorQueue.java:106)
+	at backtype.storm.disruptor$consume_batch_when_available.invoke(disruptor.clj:80)
+	at backtype.storm.daemon.executor$fn__5694$fn__5707$fn__5758.invoke(executor.clj:819)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassCastException: java.lang.Double cannot be cast to java.lang.String
+	at backtype.storm.tuple.TupleImpl.getStringByField(TupleImpl.java:153)
+	at org.apache.storm.jdbc.mapper.SimpleJdbcMapper.getColumns(SimpleJdbcMapper.java:56)
+	at com.msopentech.xixian.bolt.JdbcStoreBolt.execute(JdbcStoreBolt.java:73)
+	at backtype.storm.daemon.executor$fn__5694$tuple_action_fn__5696.invoke(executor.clj:690)
+	at backtype.storm.daemon.executor$mk_task_receiver$fn__5615.invoke(executor.clj:436)
+	at backtype.storm.disruptor$clojure_handler$reify__5189.onEvent(disruptor.clj:58)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:132)
+	... 6 more
+[Thread-26-JdbcStoreBolt] ERROR backtype.storm.daemon.executor - 
+java.lang.RuntimeException: java.lang.ClassCastException: java.lang.Double cannot be cast to java.lang.String
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:135)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchWhenAvailable(DisruptorQueue.java:106)
+	at backtype.storm.disruptor$consume_batch_when_available.invoke(disruptor.clj:80)
+	at backtype.storm.daemon.executor$fn__5694$fn__5707$fn__5758.invoke(executor.clj:819)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassCastException: java.lang.Double cannot be cast to java.lang.String
+	at backtype.storm.tuple.TupleImpl.getStringByField(TupleImpl.java:153)
+	at org.apache.storm.jdbc.mapper.SimpleJdbcMapper.getColumns(SimpleJdbcMapper.java:56)
+	at com.msopentech.xixian.bolt.JdbcStoreBolt.execute(JdbcStoreBolt.java:73)
+	at backtype.storm.daemon.executor$fn__5694$tuple_action_fn__5696.invoke(executor.clj:690)
+	at backtype.storm.daemon.executor$mk_task_receiver$fn__5615.invoke(executor.clj:436)
+	at backtype.storm.disruptor$clojure_handler$reify__5189.onEvent(disruptor.clj:58)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:132)
+	... 6 more
+[Thread-26-JdbcStoreBolt] ERROR backtype.storm.util - Halting process: ("Worker died")
+java.lang.RuntimeException: ("Worker died")
+	at backtype.storm.util$exit_process_BANG_.doInvoke(util.clj:336)
+	at clojure.lang.RestFn.invoke(RestFn.java:423)
+	at backtype.storm.daemon.worker$fn__7184$fn__7185.invoke(worker.clj:532)
+	at backtype.storm.daemon.executor$mk_executor_data$fn__5523$fn__5524.invoke(executor.clj:261)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:489)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[Thread-12-JdbcUpdateBolt] ERROR com.zaxxer.hikari.pool.HikariPool - JDBC4 Connection.isValid() method not supported, connection test query must be configured
+[Thread-47] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[Thread-50] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[Thread-53] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO data(deviceid, datatime, datatype_id, datavalue) VALUES (?, ?, ?, ?)
+[Thread-55] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO data(deviceid, datatime, datatype_id, datavalue) VALUES (?, ?, ?, ?)
+[Thread-59] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[Thread-58] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO data(deviceid, datatime, datatype_id, datavalue) VALUES (?, ?, ?, ?)
+[Thread-57] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO data(deviceid, datatime, datatype_id, datavalue) VALUES (?, ?, ?, ?)
+[Thread-67] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[Thread-70] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[Thread-73] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO data(deviceid, datatime, datatype_id, datavalue) VALUES (?, ?, ?, ?)
+[Thread-75] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO data(deviceid, datatime, datatype_id, datavalue) VALUES (?, ?, ?, ?)
+[Thread-76] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO data(deviceid, datatime, datatype_id, datavalue) VALUES (?, ?, ?, ?)
+[Thread-74] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO data(deviceid, datatime, datatype_id, datavalue) VALUES (?, ?, ?, ?)
+[Thread-86] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO data(deviceid, datatime, datatype_id, datavalue) VALUES (?, ?, ?, ?)
+[Thread-85] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO data(deviceid, datatime, datatype_id, datavalue) VALUES (?, ?, ?, ?)
+[Thread-89] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[Thread-87] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO data(deviceid, datatime, datatype_id, datavalue) VALUES (?, ?, ?, ?)
+[Thread-88] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO data(deviceid, datatime, datatype_id, datavalue) VALUES (?, ?, ?, ?)
+[Thread-100] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[Thread-103] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[Thread-12-JdbcUpdateBolt] ERROR com.zaxxer.hikari.pool.HikariPool - JDBC4 Connection.isValid() method not supported, connection test query must be configured
+[Thread-47] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[Thread-50] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[Thread-54] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO data(deviceid, datatime, datatype_id, datavalue) VALUES (?, ?, ?, ?)
+[Thread-52] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO data(deviceid, datatime, datatype_id, datavalue) VALUES (?, ?, ?, ?)
+[Thread-53] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO data(deviceid, datatime, datatype_id, datavalue) VALUES (?, ?, ?, ?)
+[Thread-56] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO data(deviceid, datatime, datatype_id, datavalue) VALUES (?, ?, ?, ?)
+[Thread-65] DEBUG org.apache.storm.jdbc.common.JdbcClient - Executing query INSERT INTO devicelog(deviceid, logtime, logtitle, comments)VALUES (?, ?, ?, ?)
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[Thread-26-JdbcStoreBolt] ERROR com.zaxxer.hikari.pool.HikariPool - JDBC4 Connection.isValid() method not supported, connection test query must be configured
+[Thread-24-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfTu7aKH3HdXCAcf","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"f431c030-8f36-4c95-abe3-44bcad5d5155","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:42:44.419+0800","receivedDate":"2015-12-31T10:43:25.559+0800","measurements":{"humtemp":17.1,"humid":63.2},"measurementsSummary":"humtemp: 17.1, humid: 63.2","metadata":{"timestamp":"1451529764.41994"}}
+[Thread-14-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:42:49.666, A new Device(id = f431c030-8f36-4c95-abe3-44bcad5d5155) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:2, stream: DeviceLogStream, id: {}, [DeviceLog, f431c030-8f36-4c95-abe3-44bcad5d5155, 1451529769666, 设备上线, 设备(id = f431c030-8f36-4c95-abe3-44bcad5d5155)在 2015-12-31T10:42:49.645 时间上线] 
+[Thread-16-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALcz5EmRL9MAWnqdH","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"e5940a53-5c86-4379-afcc-40d34fd9180b","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:42:47.581+0800","receivedDate":"2015-12-31T10:43:28.571+0800","measurements":{"soil_ph":4.8},"measurementsSummary":"soil_ph: 4.8","metadata":{"timestamp":"1451529767.58108"}}
+[Thread-14-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:42:52.537, A new Device(id = e5940a53-5c86-4379-afcc-40d34fd9180b) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:2, stream: DeviceLogStream, id: {}, [DeviceLog, e5940a53-5c86-4379-afcc-40d34fd9180b, 1451529772537, 设备上线, 设备(id = e5940a53-5c86-4379-afcc-40d34fd9180b)在 2015-12-31T10:42:52.536 时间上线] 
+[Thread-24-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfxfVLVfcshzYqKu","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"61cc50ef-d316-49ec-9534-b817271c92b3","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:42:53.098+0800","receivedDate":"2015-12-31T10:43:34.092+0800","measurements":{"windspeed":4.0,"uv":65535.0,"airtemp":11.8,"solarradiation":65535.0,"winddirection":252.0,"airhumid":78.6,"rain":16.2},"measurementsSummary":"windspeed: 4.0, uv: 65535.0, airtemp: 11.8, solarradiation: 65535.0, winddirection: 252.0, airhumid: 78.6, rain: 16.2","metadata":{"timestamp":"1451529773.09866"}}
+[Thread-20-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:42:58.206, A new Device(id = 61cc50ef-d316-49ec-9534-b817271c92b3) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:1, stream: DeviceLogStream, id: {}, [DeviceLog, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451529778201, 设备上线, 设备(id = 61cc50ef-d316-49ec-9534-b817271c92b3)在 2015-12-31T10:42:58.201 时间上线] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:9, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451529773098, 0, 16.2] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:9, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451529773098, 1, 11.8] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:9, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451529773098, 3, 4.0] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:9, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451529773098, 2, 65535.0] 
+[Thread-34-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfDWvhE5kVYG2tUo","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"70af0240-a260-4ecf-a10e-10973e70b188","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:43:10.381+0800","receivedDate":"2015-12-31T10:43:51.460+0800","measurements":{"light":46448.6},"measurementsSummary":"light: 46448.6","metadata":{"timestamp":"1451529790.38186"}}
+[Thread-14-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:43:15.533, A new Device(id = 70af0240-a260-4ecf-a10e-10973e70b188) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:2, stream: DeviceLogStream, id: {}, [DeviceLog, 70af0240-a260-4ecf-a10e-10973e70b188, 1451529795533, 设备上线, 设备(id = 70af0240-a260-4ecf-a10e-10973e70b188)在 2015-12-31T10:43:15.533 时间上线] 
+[Thread-10-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALgTRs6g4CTc3vHDq","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"2f41f68c-e94f-49d6-a66c-60dfdc9e9280","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:44:46.071+0800","receivedDate":"2015-12-31T10:45:27.080+0800","measurements":{"battVol":4297.0,"chargeVol":5238.0},"measurementsSummary":"battVol: 4297.0, chargeVol: 5238.0","metadata":{"timestamp":"1451529886.07131"}}
+[Thread-20-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:44:51.110, A new Device(id = 2f41f68c-e94f-49d6-a66c-60dfdc9e9280) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:1, stream: DeviceLogStream, id: {}, [DeviceLog, 2f41f68c-e94f-49d6-a66c-60dfdc9e9280, 1451529891110, 设备上线, 设备(id = 2f41f68c-e94f-49d6-a66c-60dfdc9e9280)在 2015-12-31T10:44:51.109 时间上线] 
+[Thread-24-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALey8jp8tThJKFM8T","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"e43062db-489b-4eb8-8777-f12060f7ddb0","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:45:03.307+0800","receivedDate":"2015-12-31T10:45:44.322+0800","measurements":{"battVol":3491.0,"chargeVol":4312.0},"measurementsSummary":"battVol: 3491.0, chargeVol: 4312.0","metadata":{"timestamp":"1451529903.30764"}}
+[Thread-20-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:45:08.290, A new Device(id = e43062db-489b-4eb8-8777-f12060f7ddb0) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:1, stream: DeviceLogStream, id: {}, [DeviceLog, e43062db-489b-4eb8-8777-f12060f7ddb0, 1451529908290, 设备上线, 设备(id = e43062db-489b-4eb8-8777-f12060f7ddb0)在 2015-12-31T10:45:08.289 时间上线] 
+[Thread-34-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfiHJTQUL5QxH5h1","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"951720b9-4778-4ddf-9cac-3d9c04847e29","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:45:17.017+0800","receivedDate":"2015-12-31T10:45:58.223+0800","measurements":{"battVol":5394.0,"chargeVol":5835.0},"measurementsSummary":"battVol: 5394.0, chargeVol: 5835.0","metadata":{"timestamp":"1451529917.17092"}}
+[Thread-20-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:45:22.250, A new Device(id = 951720b9-4778-4ddf-9cac-3d9c04847e29) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:1, stream: DeviceLogStream, id: {}, [DeviceLog, 951720b9-4778-4ddf-9cac-3d9c04847e29, 1451529922250, 设备上线, 设备(id = 951720b9-4778-4ddf-9cac-3d9c04847e29)在 2015-12-31T10:45:22.250 时间上线] 
+[Thread-10-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfxfVLVfcsSg5jNP","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"61cc50ef-d316-49ec-9534-b817271c92b3","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:45:26.515+0800","receivedDate":"2015-12-31T10:46:07.525+0800","measurements":{"windspeed":3.0,"uv":65535.0,"airtemp":11.8,"solarradiation":65535.0,"winddirection":16.0,"airhumid":78.4,"rain":16.2},"measurementsSummary":"windspeed: 3.0, uv: 65535.0, airtemp: 11.8, solarradiation: 65535.0, winddirection: 16.0, airhumid: 78.4, rain: 16.2","metadata":{"timestamp":"1451529926.51565"}}
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:8, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451529926515, 0, 16.2] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:8, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451529926515, 1, 11.8] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:8, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451529926515, 3, 3.0] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:8, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451529926515, 2, 65535.0] 
+[Thread-14-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:45:31.595, A new Device(id = 61cc50ef-d316-49ec-9534-b817271c92b3) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:2, stream: DeviceLogStream, id: {}, [DeviceLog, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451529931594, 设备上线, 设备(id = 61cc50ef-d316-49ec-9534-b817271c92b3)在 2015-12-31T10:45:31.594 时间上线] 
+[Thread-16-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALeDzBAsJbK1txwM9","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"fe92531a-833c-4795-b0c2-ebca8b39d97a","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:46:27.548+0800","receivedDate":"2015-12-31T10:47:08.636+0800","measurements":{"soilhumid":21.3,"soilTemperature":11.9},"measurementsSummary":"soilhumid: 21.3, soilTemperature: 11.9","metadata":{"timestamp":"1451529987.54885"}}
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, fe92531a-833c-4795-b0c2-ebca8b39d97a, 1451529987548, 7, 21.3] 
+[Thread-20-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:46:32.729, A new Device(id = fe92531a-833c-4795-b0c2-ebca8b39d97a) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:1, stream: DeviceLogStream, id: {}, [DeviceLog, fe92531a-833c-4795-b0c2-ebca8b39d97a, 1451529992729, 设备上线, 设备(id = fe92531a-833c-4795-b0c2-ebca8b39d97a)在 2015-12-31T10:46:32.728 时间上线] 
+[Thread-10-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALeikYw3hAu5FfQLP","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"463bd45c-cc23-4b79-aedb-69d06aba45de","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:46:47.392+0800","receivedDate":"2015-12-31T10:47:28.406+0800","measurements":{"humtemp":14.4,"humid":66.1},"measurementsSummary":"humtemp: 14.4, humid: 66.1","metadata":{"timestamp":"1451530007.3926"}}
+[Thread-20-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:46:52.365, A new Device(id = 463bd45c-cc23-4b79-aedb-69d06aba45de) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:1, stream: DeviceLogStream, id: {}, [DeviceLog, 463bd45c-cc23-4b79-aedb-69d06aba45de, 1451530012365, 设备上线, 设备(id = 463bd45c-cc23-4b79-aedb-69d06aba45de)在 2015-12-31T10:46:52.365 时间上线] 
+[Thread-16-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfxfVLVfcsGSAxV5","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"61cc50ef-d316-49ec-9534-b817271c92b3","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:47:09.069+0800","receivedDate":"2015-12-31T10:47:50.119+0800","measurements":{"windspeed":5.0,"uv":65535.0,"airtemp":12.0,"solarradiation":65535.0,"winddirection":14.0,"airhumid":78.6,"rain":16.2},"measurementsSummary":"windspeed: 5.0, uv: 65535.0, airtemp: 12.0, solarradiation: 65535.0, winddirection: 14.0, airhumid: 78.6, rain: 16.2","metadata":{"timestamp":"1451530029.06936"}}
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530029069, 0, 16.2] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530029069, 1, 12.0] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530029069, 3, 5.0] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530029069, 2, 65535.0] 
+[Thread-16-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALcVJs1EwZkcXJm5q","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"a613f7a9-1172-443a-83b5-df428a9791c5","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:47:14.515+0800","receivedDate":"2015-12-31T10:47:55.531+0800","measurements":{"soilhumid":100.0,"soilTemperature":0.0},"measurementsSummary":"soilhumid: 100.0, soilTemperature: 0.0","metadata":{"timestamp":"1451530034.51565"}}
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, a613f7a9-1172-443a-83b5-df428a9791c5, 1451530034515, 7, 100.0] 
+[Thread-14-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:47:19.669, A new Device(id = a613f7a9-1172-443a-83b5-df428a9791c5) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:2, stream: DeviceLogStream, id: {}, [DeviceLog, a613f7a9-1172-443a-83b5-df428a9791c5, 1451530039669, 设备上线, 设备(id = a613f7a9-1172-443a-83b5-df428a9791c5)在 2015-12-31T10:47:19.668 时间上线] 
+[Thread-34-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfiHJTQUL56uhXvP","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"951720b9-4778-4ddf-9cac-3d9c04847e29","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:48:17.736+0800","receivedDate":"2015-12-31T10:48:58.768+0800","measurements":{"battVol":5394.0,"chargeVol":5917.0},"measurementsSummary":"battVol: 5394.0, chargeVol: 5917.0","metadata":{"timestamp":"1451530097.73635"}}
+[Thread-34-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfTu7aKH3H1ewS1m","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"f431c030-8f36-4c95-abe3-44bcad5d5155","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:48:43.629+0800","receivedDate":"2015-12-31T10:49:25.600+0800","measurements":{"humtemp":17.5,"humid":62.0},"measurementsSummary":"humtemp: 17.5, humid: 62.0","metadata":{"timestamp":"1451530123.62991"}}
+[Thread-10-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfxfVLVfcs6EPnpP","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"61cc50ef-d316-49ec-9534-b817271c92b3","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:48:51.255+0800","receivedDate":"2015-12-31T10:49:32.284+0800","measurements":{"windspeed":1.0,"uv":65535.0,"airtemp":12.0,"solarradiation":65535.0,"winddirection":54.0,"airhumid":77.1,"rain":16.2},"measurementsSummary":"windspeed: 1.0, uv: 65535.0, airtemp: 12.0, solarradiation: 65535.0, winddirection: 54.0, airhumid: 77.1, rain: 16.2","metadata":{"timestamp":"1451530131.25588"}}
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:8, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530131255, 0, 16.2] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:8, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530131255, 1, 12.0] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:8, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530131255, 3, 1.0] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:8, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530131255, 2, 65535.0] 
+[Thread-24-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALeUNN3xVt6onneq5","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"87b16f58-15d1-45ef-97da-eb5738752d99","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:48:55.529+0800","receivedDate":"2015-12-31T10:49:36.560+0800","measurements":{"light":28753.9},"measurementsSummary":"light: 28753.9","metadata":{"timestamp":"1451530135.52932"}}
+[Thread-14-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:49:00.649, A new Device(id = 87b16f58-15d1-45ef-97da-eb5738752d99) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:2, stream: DeviceLogStream, id: {}, [DeviceLog, 87b16f58-15d1-45ef-97da-eb5738752d99, 1451530140649, 设备上线, 设备(id = 87b16f58-15d1-45ef-97da-eb5738752d99)在 2015-12-31T10:49:00.649 时间上线] 
+[Thread-10-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALghp3ymFVF3fphZR","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"c38462a0-88dc-481e-a630-614d05db7504","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:50:37.105+0800","receivedDate":"2015-12-31T10:51:18.142+0800","measurements":{"soilhumid":20.5,"soilTemperature":11.2},"measurementsSummary":"soilhumid: 20.5, soilTemperature: 11.2","metadata":{"timestamp":"1451530237.10549"}}
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:8, stream: MeasurementsStream, id: {}, [Measurements, c38462a0-88dc-481e-a630-614d05db7504, 1451530237105, 7, 20.5] 
+[Thread-20-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:50:42.277, A new Device(id = c38462a0-88dc-481e-a630-614d05db7504) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:1, stream: DeviceLogStream, id: {}, [DeviceLog, c38462a0-88dc-481e-a630-614d05db7504, 1451530242277, 设备上线, 设备(id = c38462a0-88dc-481e-a630-614d05db7504)在 2015-12-31T10:50:42.276 时间上线] 
+[Thread-34-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALgTRs6g4CSz4zbrP","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"2f41f68c-e94f-49d6-a66c-60dfdc9e9280","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:50:46.433+0800","receivedDate":"2015-12-31T10:51:27.470+0800","measurements":{"battVol":4303.0,"chargeVol":5390.0},"measurementsSummary":"battVol: 4303.0, chargeVol: 5390.0","metadata":{"timestamp":"1451530246.43362"}}
+[Thread-14-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:50:51.416, A new Device(id = 2f41f68c-e94f-49d6-a66c-60dfdc9e9280) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:2, stream: DeviceLogStream, id: {}, [DeviceLog, 2f41f68c-e94f-49d6-a66c-60dfdc9e9280, 1451530251416, 设备上线, 设备(id = 2f41f68c-e94f-49d6-a66c-60dfdc9e9280)在 2015-12-31T10:50:51.416 时间上线] 
+[Thread-16-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALey8jp8tTggMnebZ","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"e43062db-489b-4eb8-8777-f12060f7ddb0","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:51:03.416+0800","receivedDate":"2015-12-31T10:51:44.454+0800","measurements":{"battVol":3501.0,"chargeVol":4312.0},"measurementsSummary":"battVol: 3501.0, chargeVol: 4312.0","metadata":{"timestamp":"1451530263.41604"}}
+[Thread-24-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfiHJTQUL4nwp4Du","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"951720b9-4778-4ddf-9cac-3d9c04847e29","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:51:17.645+0800","receivedDate":"2015-12-31T10:51:58.690+0800","measurements":{"battVol":5394.0,"chargeVol":5671.0},"measurementsSummary":"battVol: 5394.0, chargeVol: 5671.0","metadata":{"timestamp":"1451530277.64553"}}
+[Thread-14-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:51:22.705, A new Device(id = 951720b9-4778-4ddf-9cac-3d9c04847e29) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:2, stream: DeviceLogStream, id: {}, [DeviceLog, 951720b9-4778-4ddf-9cac-3d9c04847e29, 1451530282705, 设备上线, 设备(id = 951720b9-4778-4ddf-9cac-3d9c04847e29)在 2015-12-31T10:51:22.705 时间上线] 
+[Thread-24-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALcVJs1EwZk6WJQpw","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"a613f7a9-1172-443a-83b5-df428a9791c5","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:52:15.145+0800","receivedDate":"2015-12-31T10:52:56.186+0800","measurements":{"soilhumid":100.0,"soilTemperature":0.0},"measurementsSummary":"soilhumid: 100.0, soilTemperature: 0.0","metadata":{"timestamp":"1451530335.14553"}}
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:9, stream: MeasurementsStream, id: {}, [Measurements, a613f7a9-1172-443a-83b5-df428a9791c5, 1451530335145, 7, 100.0] 
+[Thread-20-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:52:20.168, A new Device(id = a613f7a9-1172-443a-83b5-df428a9791c5) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:1, stream: DeviceLogStream, id: {}, [DeviceLog, a613f7a9-1172-443a-83b5-df428a9791c5, 1451530340168, 设备上线, 设备(id = a613f7a9-1172-443a-83b5-df428a9791c5)在 2015-12-31T10:52:20.168 时间上线] 
+[Thread-24-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALgD3gDaruenVYLSb","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"964a5903-3b8b-4adb-aeff-88a89aba10c7","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:52:15.645+0800","receivedDate":"2015-12-31T10:52:56.686+0800","measurements":{"light":33546.2},"measurementsSummary":"light: 33546.2","metadata":{"timestamp":"1451530335.64553"}}
+[Thread-20-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:52:20.633, A new Device(id = 964a5903-3b8b-4adb-aeff-88a89aba10c7) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:1, stream: DeviceLogStream, id: {}, [DeviceLog, 964a5903-3b8b-4adb-aeff-88a89aba10c7, 1451530340633, 设备上线, 设备(id = 964a5903-3b8b-4adb-aeff-88a89aba10c7)在 2015-12-31T10:52:20.633 时间上线] 
+[Thread-34-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALeikYw3hAtTSPejy","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"463bd45c-cc23-4b79-aedb-69d06aba45de","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:52:46.087+0800","receivedDate":"2015-12-31T10:53:27.970+0800","measurements":{"humtemp":15.3,"humid":68.0},"measurementsSummary":"humtemp: 15.3, humid: 68.0","metadata":{"timestamp":"1451530366.87014"}}
+[Thread-16-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfxfVLVfcred8Jfy","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"61cc50ef-d316-49ec-9534-b817271c92b3","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:53:07.725+0800","receivedDate":"2015-12-31T10:53:48.828+0800","measurements":{"windspeed":7.0,"uv":65535.0,"airtemp":12.1,"solarradiation":65535.0,"winddirection":11.0,"airhumid":77.4,"rain":16.2},"measurementsSummary":"windspeed: 7.0, uv: 65535.0, airtemp: 12.1, solarradiation: 65535.0, winddirection: 11.0, airhumid: 77.4, rain: 16.2","metadata":{"timestamp":"1451530387.72561"}}
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530387725, 0, 16.2] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530387725, 1, 12.1] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530387725, 3, 7.0] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530387725, 2, 65535.0] 
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: eventhub
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Loading Properties File: sqlserver
+[main] INFO com.msopentech.xixian.PropertyUtil - Successfully loaded Properties File: sqlserver
+[Thread-26-JdbcStoreBolt] ERROR com.zaxxer.hikari.pool.HikariPool - JDBC4 Connection.isValid() method not supported, connection test query must be configured
+[Thread-16-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfxfVLVfcrUQgB9H","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"61cc50ef-d316-49ec-9534-b817271c92b3","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:54:50.027+0800","receivedDate":"2015-12-31T10:55:31.337+0800","measurements":{"windspeed":8.0,"uv":65535.0,"airtemp":12.2,"solarradiation":65535.0,"winddirection":45.0,"airhumid":76.8,"rain":16.2},"measurementsSummary":"windspeed: 8.0, uv: 65535.0, airtemp: 12.2, solarradiation: 65535.0, winddirection: 45.0, airhumid: 76.8, rain: 16.2","metadata":{"timestamp":"1451530490.27053"}}
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530490027, 0, 16.2] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530490027, 1, 12.2] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530490027, 3, 8.0] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530490027, 2, 65535.0] 
+[Thread-14-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:56:30.844, A new Device(id = 61cc50ef-d316-49ec-9534-b817271c92b3) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:2, stream: DeviceLogStream, id: {}, [DeviceLog, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530590844, 设备上线, 设备(id = 61cc50ef-d316-49ec-9534-b817271c92b3)在 2015-12-31T10:56:30.808 时间上线] 
+[Thread-10-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALeDzBAsJbHyzr4DM","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"fe92531a-833c-4795-b0c2-ebca8b39d97a","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:56:27.445+0800","receivedDate":"2015-12-31T10:57:08.554+0800","measurements":{"soilhumid":21.6,"soilTemperature":11.9},"measurementsSummary":"soilhumid: 21.6, soilTemperature: 11.9","metadata":{"timestamp":"1451530587.44534"}}
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:8, stream: MeasurementsStream, id: {}, [Measurements, fe92531a-833c-4795-b0c2-ebca8b39d97a, 1451530587445, 7, 21.6] 
+[Thread-20-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:56:32.633, A new Device(id = fe92531a-833c-4795-b0c2-ebca8b39d97a) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:1, stream: DeviceLogStream, id: {}, [DeviceLog, fe92531a-833c-4795-b0c2-ebca8b39d97a, 1451530592633, 设备上线, 设备(id = fe92531a-833c-4795-b0c2-ebca8b39d97a)在 2015-12-31T10:56:32.633 时间上线] 
+[Thread-34-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfxfVLVfcrJ9whsm","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"61cc50ef-d316-49ec-9534-b817271c92b3","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:56:32.723+0800","receivedDate":"2015-12-31T10:57:13.785+0800","measurements":{"windspeed":8.0,"uv":65535.0,"airtemp":12.1,"solarradiation":65535.0,"winddirection":33.0,"airhumid":76.6,"rain":16.2},"measurementsSummary":"windspeed: 8.0, uv: 65535.0, airtemp: 12.1, solarradiation: 65535.0, winddirection: 33.0, airhumid: 76.6, rain: 16.2","metadata":{"timestamp":"1451530592.72366"}}
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:10, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530592723, 0, 16.2] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:10, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530592723, 1, 12.1] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:10, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530592723, 3, 8.0] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:10, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530592723, 2, 65535.0] 
+[Thread-24-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALcEvg89kGwbgiRqR","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"80851179-1abe-40f6-aeca-0f46ec001b8b","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:56:37.056+0800","receivedDate":"2015-12-31T10:57:18.626+0800","measurements":{"soil_ph":5.0},"measurementsSummary":"soil_ph: 5.0","metadata":{"timestamp":"1451530597.56057"}}
+[Thread-20-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:56:42.620, A new Device(id = 80851179-1abe-40f6-aeca-0f46ec001b8b) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:1, stream: DeviceLogStream, id: {}, [DeviceLog, 80851179-1abe-40f6-aeca-0f46ec001b8b, 1451530602618, 设备上线, 设备(id = 80851179-1abe-40f6-aeca-0f46ec001b8b)在 2015-12-31T10:56:42.618 时间上线] 
+[Thread-10-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALgTRs6g4CSNAmfWw","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"2f41f68c-e94f-49d6-a66c-60dfdc9e9280","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:56:45.983+0800","receivedDate":"2015-12-31T10:57:27.048+0800","measurements":{"battVol":4303.0,"chargeVol":5109.0},"measurementsSummary":"battVol: 4303.0, chargeVol: 5109.0","metadata":{"timestamp":"1451530605.98342"}}
+[Thread-20-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:56:51.091, A new Device(id = 2f41f68c-e94f-49d6-a66c-60dfdc9e9280) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:1, stream: DeviceLogStream, id: {}, [DeviceLog, 2f41f68c-e94f-49d6-a66c-60dfdc9e9280, 1451530611091, 设备上线, 设备(id = 2f41f68c-e94f-49d6-a66c-60dfdc9e9280)在 2015-12-31T10:56:51.090 时间上线] 
+[Thread-16-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfxfVLVfcrD38iUP","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"61cc50ef-d316-49ec-9534-b817271c92b3","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:57:23.975+0800","receivedDate":"2015-12-31T10:58:05.043+0800","measurements":{"windspeed":4.0,"uv":65535.0,"airtemp":12.0,"solarradiation":65535.0,"winddirection":47.0,"airhumid":75.6,"rain":16.2},"measurementsSummary":"windspeed: 4.0, uv: 65535.0, airtemp: 12.0, solarradiation: 65535.0, winddirection: 47.0, airhumid: 75.6, rain: 16.2","metadata":{"timestamp":"1451530643.97561"}}
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530643975, 0, 16.2] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530643975, 1, 12.0] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530643975, 3, 4.0] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:7, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530643975, 2, 65535.0] 
+[Thread-10-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfTu7aKH3G5eX1vo","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"f431c030-8f36-4c95-abe3-44bcad5d5155","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:57:44.523+0800","receivedDate":"2015-12-31T10:58:25.728+0800","measurements":{"humtemp":15.5,"humid":67.3},"measurementsSummary":"humtemp: 15.5, humid: 67.3","metadata":{"timestamp":"1451530664.52346"}}
+[Thread-14-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:57:49.663, A new Device(id = f431c030-8f36-4c95-abe3-44bcad5d5155) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:2, stream: DeviceLogStream, id: {}, [DeviceLog, f431c030-8f36-4c95-abe3-44bcad5d5155, 1451530669663, 设备上线, 设备(id = f431c030-8f36-4c95-abe3-44bcad5d5155)在 2015-12-31T10:57:49.663 时间上线] 
+[Thread-16-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfDWvhE5kTzQUuDZ","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"70af0240-a260-4ecf-a10e-10973e70b188","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:58:10.291+0800","receivedDate":"2015-12-31T10:58:51.416+0800","measurements":{"light":43868.1},"measurementsSummary":"light: 43868.1","metadata":{"timestamp":"1451530690.29104"}}
+[Thread-20-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T10:58:15.606, A new Device(id = 70af0240-a260-4ecf-a10e-10973e70b188) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:1, stream: DeviceLogStream, id: {}, [DeviceLog, 70af0240-a260-4ecf-a10e-10973e70b188, 1451530695606, 设备上线, 设备(id = 70af0240-a260-4ecf-a10e-10973e70b188)在 2015-12-31T10:58:15.606 时间上线] 
+[Thread-34-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfxfVLVfcr7vM4zj","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"61cc50ef-d316-49ec-9534-b817271c92b3","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:58:15.223+0800","receivedDate":"2015-12-31T10:58:56.306+0800","measurements":{"windspeed":6.0,"uv":65535.0,"airtemp":11.8,"solarradiation":65535.0,"winddirection":50.0,"airhumid":76.0,"rain":16.2},"measurementsSummary":"windspeed: 6.0, uv: 65535.0, airtemp: 11.8, solarradiation: 65535.0, winddirection: 50.0, airhumid: 76.0, rain: 16.2","metadata":{"timestamp":"1451530695.22366"}}
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:10, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530695223, 0, 16.2] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:10, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530695223, 1, 11.8] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:10, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530695223, 3, 6.0] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:10, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530695223, 2, 65535.0] 
+[Thread-34-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALfxfVLVfcqwghQnK","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"61cc50ef-d316-49ec-9534-b817271c92b3","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T10:59:57.732+0800","receivedDate":"2015-12-31T11:00:38.823+0800","measurements":{"windspeed":6.0,"uv":65535.0,"airtemp":11.7,"solarradiation":65535.0,"winddirection":50.0,"airhumid":78.4,"rain":16.2},"measurementsSummary":"windspeed: 6.0, uv: 65535.0, airtemp: 11.7, solarradiation: 65535.0, winddirection: 50.0, airhumid: 78.4, rain: 16.2","metadata":{"timestamp":"1451530797.73244"}}
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:10, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530797732, 0, 16.2] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:10, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530797732, 1, 11.7] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:10, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530797732, 3, 6.0] 
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: GatewayBolt:10, stream: MeasurementsStream, id: {}, [Measurements, 61cc50ef-d316-49ec-9534-b817271c92b3, 1451530797732, 2, 65535.0] 
+[Thread-24-GatewayBolt] DEBUG com.msopentech.xixian.bolt.GatewayBolt - Received Msg: {"id":"1468ttALey8jp8tTfkUoBN7","eventType":"Measurements","siteToken":"81C12401E52422FD","deviceAssignmentToken":"e43062db-489b-4eb8-8777-f12060f7ddb0","assignmentType":"Associated","assetModuleId":"fs-devices","assetId":"172","eventDate":"2015-12-31T11:00:03.027+0800","receivedDate":"2015-12-31T11:00:44.361+0800","measurements":{"battVol":3506.0,"chargeVol":4312.0},"measurementsSummary":"battVol: 3506.0, chargeVol: 4312.0","metadata":{"timestamp":"1451530803.27053"}}
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:1, stream: DeviceLogStream, id: {}, [DeviceLog, e43062db-489b-4eb8-8777-f12060f7ddb0, 1451530808327, 设备上线, 设备(id = e43062db-489b-4eb8-8777-f12060f7ddb0)在 2015-12-31T11:00:08.327 时间上线] 
+[Thread-20-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T11:00:08.327, A new Device(id = e43062db-489b-4eb8-8777-f12060f7ddb0) detected.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:1, stream: DeviceLogStream, id: {}, [DeviceLog, fe92531a-833c-4795-b0c2-ebca8b39d97a, 1451531401590, 设备下线, 设备(id = fe92531a-833c-4795-b0c2-ebca8b39d97a)在 2015-12-31T11:10:01.590 时间下线] 
+[Thread-20-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T11:10:01.591, The Device(id = fe92531a-833c-4795-b0c2-ebca8b39d97a) disactive.
+[Thread-26-JdbcStoreBolt] DEBUG com.msopentech.xixian.bolt.JdbcStoreBolt - Receive tuple: source: DeviceStateDetectBolt:1, stream: AlertInsertStream, id: {}, [DisactiveAlert, fe92531a-833c-4795-b0c2-ebca8b39d97a, 设备状态告警, 设备(id = fe92531a-833c-4795-b0c2-ebca8b39d97a)在 2015-12-31T11:10:01.591 时间下线, 1451531401591, 0, disactive, Normal] 
+[Thread-20-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T11:10:01.592, The Device(id = 80851179-1abe-40f6-aeca-0f46ec001b8b) disactive.
+[Thread-20-DeviceStateDetectBolt] DEBUG com.msopentech.xixian.bolt.DeviceStateDetectBolt - Time: 2015-12-31T11:10:01.593, The Device(id = 2f41f68c-e94f-49d6-a66c-60dfdc9e9280) disactive.
+[Thread-26-JdbcStoreBolt] ERROR backtype.storm.util - Async loop died!
+java.lang.RuntimeException: java.lang.ClassCastException: com.msopentech.xixian.bolt.DeviceStateDetectBolt$State cannot be cast to java.lang.String
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:135)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchWhenAvailable(DisruptorQueue.java:106)
+	at backtype.storm.disruptor$consume_batch_when_available.invoke(disruptor.clj:80)
+	at backtype.storm.daemon.executor$fn__5694$fn__5707$fn__5758.invoke(executor.clj:819)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassCastException: com.msopentech.xixian.bolt.DeviceStateDetectBolt$State cannot be cast to java.lang.String
+	at backtype.storm.tuple.TupleImpl.getStringByField(TupleImpl.java:153)
+	at org.apache.storm.jdbc.mapper.SimpleJdbcMapper.getColumns(SimpleJdbcMapper.java:56)
+	at com.msopentech.xixian.bolt.JdbcStoreBolt.execute(JdbcStoreBolt.java:74)
+	at backtype.storm.daemon.executor$fn__5694$tuple_action_fn__5696.invoke(executor.clj:690)
+	at backtype.storm.daemon.executor$mk_task_receiver$fn__5615.invoke(executor.clj:436)
+	at backtype.storm.disruptor$clojure_handler$reify__5189.onEvent(disruptor.clj:58)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:132)
+	... 6 more
+[Thread-26-JdbcStoreBolt] ERROR backtype.storm.daemon.executor - 
+java.lang.RuntimeException: java.lang.ClassCastException: com.msopentech.xixian.bolt.DeviceStateDetectBolt$State cannot be cast to java.lang.String
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:135)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchWhenAvailable(DisruptorQueue.java:106)
+	at backtype.storm.disruptor$consume_batch_when_available.invoke(disruptor.clj:80)
+	at backtype.storm.daemon.executor$fn__5694$fn__5707$fn__5758.invoke(executor.clj:819)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:479)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassCastException: com.msopentech.xixian.bolt.DeviceStateDetectBolt$State cannot be cast to java.lang.String
+	at backtype.storm.tuple.TupleImpl.getStringByField(TupleImpl.java:153)
+	at org.apache.storm.jdbc.mapper.SimpleJdbcMapper.getColumns(SimpleJdbcMapper.java:56)
+	at com.msopentech.xixian.bolt.JdbcStoreBolt.execute(JdbcStoreBolt.java:74)
+	at backtype.storm.daemon.executor$fn__5694$tuple_action_fn__5696.invoke(executor.clj:690)
+	at backtype.storm.daemon.executor$mk_task_receiver$fn__5615.invoke(executor.clj:436)
+	at backtype.storm.disruptor$clojure_handler$reify__5189.onEvent(disruptor.clj:58)
+	at backtype.storm.utils.DisruptorQueue.consumeBatchToCursor(DisruptorQueue.java:132)
+	... 6 more
+[Thread-26-JdbcStoreBolt] ERROR backtype.storm.util - Halting process: ("Worker died")
+java.lang.RuntimeException: ("Worker died")
+	at backtype.storm.util$exit_process_BANG_.doInvoke(util.clj:336)
+	at clojure.lang.RestFn.invoke(RestFn.java:423)
+	at backtype.storm.daemon.worker$fn__7184$fn__7185.invoke(worker.clj:532)
+	at backtype.storm.daemon.executor$mk_executor_data$fn__5523$fn__5524.invoke(executor.clj:261)
+	at backtype.storm.util$async_loop$fn__545.invoke(util.clj:489)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
