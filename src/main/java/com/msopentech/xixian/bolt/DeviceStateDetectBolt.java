@@ -23,6 +23,7 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
     public static final String ALERT_INSERT_STREAM = "AlertInsertStream";
     public static final String ALERT_UPDATE_STREAM = "AlertUpdateStream";
     public static final String DEVICELOG_STREAM = "DeviceLogStream";
+    public static final String STATE_UPDATE_STREAM = "StateUpdateStream";
     private static final Logger LOGGER = LoggerFactory.getLogger(DeviceStateDetectBolt.class);
     private static final String COMMENT_OFFLINE_FORMAT = "设备(id = %s)在 %s 时间下线";
     private static final String COMMENT_ONLINE_FORMAT = "设备(id = %s)在 %s 时间上线";
@@ -36,7 +37,7 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
     private Map<String, Integer> deviceMissCounters;
 
     private enum State {
-        ACTIVE("active"), DISACTIVE("disactive"), UNKNOWN("unknown");
+        ACTIVE("active"), DISACTIVE("disactive"), UNKNOWN("unknown"), ONLINE("online"), OFFLINE("offline");
         private final String str;
         private State(final String str) {
             this.str = str;
@@ -69,6 +70,7 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
             for (String id : deviceMissCounters.keySet()) {
                 Integer counter = deviceMissCounters.get(id);
                 if (counter == diedThreshold) {
+                    emitUpdateState(id, State.OFFLINE);
                     emitDeviceStateLog(id, State.DISACTIVE);
                     emitDisactiveAlert(id);
                     LOGGER.debug("Time: {}, The Device(id = {}) disactive.", new DateTime().toLocalDateTime().toString(), id);
@@ -89,6 +91,7 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
                         new DateTime().toLocalDateTime().toString(), id);
             }
 
+            emitUpdateState(id, State.ONLINE);
             deviceMissCounters.put(id, 0);
         }
         collector.ack(tuple);
@@ -126,6 +129,10 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
     }
 
 
+    private void emitUpdateState(String id, State state) {
+        Values values = new Values(Tag.DeviceState, id, state.toString());
+    }
+
     @Override
     public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
         outputFieldsDeclarer.declareStream(ALERT_INSERT_STREAM, new Fields("tag", "deviceid",
@@ -134,5 +141,6 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
                 "title", "comments", "createtime", "endtime", "state", "level"));
         outputFieldsDeclarer.declareStream(DEVICELOG_STREAM, new Fields("tag", "deviceid", "logtime",
                 "logtitle", "comments"));
+        outputFieldsDeclarer.declareStream(STATE_UPDATE_STREAM, new Fields("tag", "deviceid", "state"));
     }
 }

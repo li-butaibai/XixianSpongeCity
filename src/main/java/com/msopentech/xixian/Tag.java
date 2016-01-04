@@ -5,8 +5,7 @@ package com.msopentech.xixian;
  */
 public enum Tag {
     Measurements,
-    DeviceOffline,
-    DeviceOnline,
+    DeviceState,
     DeviceLog,
     DisactiveAlert,
     ActiveAlert

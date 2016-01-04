@@ -37,6 +37,7 @@ public class MainTopology {
             "VALUES (?, ?, ?, ?)";
     private static final String ALERT_UPDATE_SQL = "UPDATE alert SET endtime = ? WHERE id = (SELECT max(id) " +
             " FROM alert WHERE deviceid = ?)";
+    private static final String UPDATE_STATE_SQL = "UPDATE devices SET state = ? WHERE deviceid = ? ";
 
 
     private EventHubSpoutConfig initEventHubConfig(Boolean enableTimeFilter) {
@@ -110,6 +111,12 @@ public class MainTopology {
         SimpleJdbcMapper alertUpdateMapper = new SimpleJdbcMapper(schemaColumns);
         jdbcUpdateBolt.register(Tag.ActiveAlert, alertUpdateMapper, ALERT_UPDATE_SQL);
 
+        schemaColumns = new ArrayList<>();
+        schemaColumns.add(new Column("state", Types.VARCHAR));
+        schemaColumns.add(new Column("deviceid", Types.VARCHAR));
+        SimpleJdbcMapper updateStateMapper = new SimpleJdbcMapper(schemaColumns);
+        jdbcUpdateBolt.register(Tag.DeviceState, updateStateMapper, UPDATE_STATE_SQL);
+
         return jdbcUpdateBolt;
     }
 
@@ -135,7 +142,9 @@ public class MainTopology {
                 .localOrShuffleGrouping("DeviceStateDetectBolt", DeviceStateDetectBolt.ALERT_INSERT_STREAM)
                 .localOrShuffleGrouping("DeviceStateDetectBolt", DeviceStateDetectBolt.DEVICELOG_STREAM);
         builder.setBolt("JdbcUpdateBolt", jdbcUpdateBolt, 1)
-                .localOrShuffleGrouping("DeviceStateDetectBolt", DeviceStateDetectBolt.ALERT_UPDATE_STREAM);
+                .localOrShuffleGrouping("DeviceStateDetectBolt", DeviceStateDetectBolt.ALERT_UPDATE_STREAM)
+                .localOrShuffleGrouping("DeviceStateDetectBolt", DeviceStateDetectBolt.STATE_UPDATE_STREAM);
+
         return builder.createTopology();
     }
 
