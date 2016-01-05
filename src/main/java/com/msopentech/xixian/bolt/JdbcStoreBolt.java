@@ -66,13 +66,13 @@ public class JdbcStoreBolt extends AbstractJdbcBolt{
 
     public void execute(Tuple tuple) {
 
-        LOGGER.debug("Receive tuple: {} ", tuple);
+        LOGGER.debug("Receive tuple: {} ", tuple.toString());
         collector.ack(tuple);
 
         final Tag tag = (Tag) tuple.getValueByField("tag");
         if (tag != null && isRegistered(tag)) {
             List<Column> columns = mappers.get(tag).getColumns(tuple);
-            final List<List<Column>> columnLists = new ArrayList<List<Column>>();
+            final List<List<Column>> columnLists = new ArrayList<>();
             columnLists.add(columns);
             new Thread(new Runnable() {
                 public void run() {

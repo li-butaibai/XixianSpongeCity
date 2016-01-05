@@ -30,7 +30,7 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
     private static final String TITLE_ONLINE = "设备上线";
     private static final String TITLE_OFFLINE = "设备下线";
     private static final String TITLE_ALERT = "设备状态告警";
-    private static final String DEFAULT_LEVEL = "Normal";
+    private static final int DEFAULT_LEVEL = 1;
     public static final int DEFAULT_DIED_THRESHOLD = 5;
     private OutputCollector collector;
     private int diedThreshold;
@@ -84,6 +84,15 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
                 emitDeviceStateLog(id, State.ACTIVE);
                 LOGGER.debug("Time: {}, A new Device(id = {}) detected.",
                         new DateTime().toLocalDateTime().toString(), id);
+                //test
+                emitDisactiveAlert(id);
+                try {
+                    Thread.sleep(5*1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                emitActiveAlert(id);
+                //emitUpdateState(id, State.ACTIVE);
             } else if (deviceMissCounters.get(id) > diedThreshold) {
                 emitDeviceStateLog(id, State.ACTIVE);
                 emitActiveAlert(id);
@@ -131,6 +140,7 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
 
     private void emitUpdateState(String id, State state) {
         Values values = new Values(Tag.DeviceState, id, state.toString());
+        collector.emit(STATE_UPDATE_STREAM, values);
     }
 
     @Override

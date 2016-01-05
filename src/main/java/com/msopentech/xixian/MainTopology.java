@@ -11,7 +11,6 @@ import com.microsoft.eventhubs.spout.EventHubSpoutConfig;
 import com.msopentech.xixian.bolt.DeviceStateDetectBolt;
 import com.msopentech.xixian.bolt.GatewayBolt;
 import com.msopentech.xixian.bolt.JdbcStoreBolt;
-import com.msopentech.xixian.bolt.JdbcUpdateBolt;
 import org.apache.storm.jdbc.common.Column;
 import org.apache.storm.jdbc.common.ConnectionProvider;
 import org.apache.storm.jdbc.common.HikariCPConnectionProvider;
@@ -36,7 +35,7 @@ public class MainTopology {
     private static final String LOG_INSERT_SQL = "INSERT INTO devicelog(deviceid, logtime, logtitle, comments)" +
             "VALUES (?, ?, ?, ?)";
     private static final String ALERT_UPDATE_SQL = "UPDATE alert SET endtime = ? WHERE id = (SELECT max(id) " +
-            " FROM alert WHERE deviceid = ?)";
+            " FROM alert WHERE deviceid = ? )";
     private static final String UPDATE_STATE_SQL = "UPDATE devices SET state = ? WHERE deviceid = ? ";
 
 
@@ -86,7 +85,7 @@ public class MainTopology {
         schemaColumns.add(new Column("comments", Types.VARCHAR));
         schemaColumns.add(new Column("createtime", Types.TIMESTAMP));
         schemaColumns.add(new Column("state", Types.VARCHAR));
-        schemaColumns.add(new Column("level", Types.VARCHAR));
+        schemaColumns.add(new Column("level", Types.INTEGER));
         SimpleJdbcMapper alertInsertMapper = new SimpleJdbcMapper(schemaColumns);
         jdbcStoreBolt.register(Tag.DisactiveAlert, alertInsertMapper, ALERT_INSERT_SQL);
 
@@ -98,26 +97,19 @@ public class MainTopology {
         SimpleJdbcMapper logMapper = new SimpleJdbcMapper(schemaColumns);
         jdbcStoreBolt.register(Tag.DeviceLog, logMapper, LOG_INSERT_SQL);
 
-        return jdbcStoreBolt;
-    }
-
-    private JdbcUpdateBolt buildJdbcUpdateBolt() {
-        ConnectionProvider connectionProvider = new HikariCPConnectionProvider(getAzureSQLConfig());
-        JdbcUpdateBolt jdbcUpdateBolt = new JdbcUpdateBolt(connectionProvider);
-
-        List<Column> schemaColumns = new ArrayList<Column>();
+        schemaColumns = new ArrayList<Column>();
         schemaColumns.add(new Column("endtime", Types.TIMESTAMP));
         schemaColumns.add(new Column("deviceid", Types.VARCHAR));
         SimpleJdbcMapper alertUpdateMapper = new SimpleJdbcMapper(schemaColumns);
-        jdbcUpdateBolt.register(Tag.ActiveAlert, alertUpdateMapper, ALERT_UPDATE_SQL);
+        jdbcStoreBolt.register(Tag.ActiveAlert, alertUpdateMapper, ALERT_UPDATE_SQL);
 
         schemaColumns = new ArrayList<>();
         schemaColumns.add(new Column("state", Types.VARCHAR));
         schemaColumns.add(new Column("deviceid", Types.VARCHAR));
         SimpleJdbcMapper updateStateMapper = new SimpleJdbcMapper(schemaColumns);
-        jdbcUpdateBolt.register(Tag.DeviceState, updateStateMapper, UPDATE_STATE_SQL);
+        jdbcStoreBolt.register(Tag.DeviceState, updateStateMapper, UPDATE_STATE_SQL);
 
-        return jdbcUpdateBolt;
+        return jdbcStoreBolt;
     }
 
     private StormTopology buildTopology() {
@@ -129,7 +121,6 @@ public class MainTopology {
         EventHubSpout eventHubSpout = new EventHubSpout(config);
 
         JdbcStoreBolt jdbcStoreBolt = buildJdbcStoreBolt();
-        JdbcUpdateBolt jdbcUpdateBolt = buildJdbcUpdateBolt();
         DeviceStateDetectBolt stateDetectBolt = new DeviceStateDetectBolt(150);
 
         builder.setSpout("EventHubSpout", eventHubSpout, numWorkers);
@@ -140,8 +131,7 @@ public class MainTopology {
         builder.setBolt("JdbcStoreBolt", jdbcStoreBolt, 1)
                 .localOrShuffleGrouping("GatewayBolt", GatewayBolt.MEASUREMENTS_STREAM)
                 .localOrShuffleGrouping("DeviceStateDetectBolt", DeviceStateDetectBolt.ALERT_INSERT_STREAM)
-                .localOrShuffleGrouping("DeviceStateDetectBolt", DeviceStateDetectBolt.DEVICELOG_STREAM);
-        builder.setBolt("JdbcUpdateBolt", jdbcUpdateBolt, 1)
+                .localOrShuffleGrouping("DeviceStateDetectBolt", DeviceStateDetectBolt.DEVICELOG_STREAM)
                 .localOrShuffleGrouping("DeviceStateDetectBolt", DeviceStateDetectBolt.ALERT_UPDATE_STREAM)
                 .localOrShuffleGrouping("DeviceStateDetectBolt", DeviceStateDetectBolt.STATE_UPDATE_STREAM);
 
