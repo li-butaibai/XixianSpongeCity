@@ -84,15 +84,6 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
                 emitDeviceStateLog(id, State.ACTIVE);
                 LOGGER.debug("Time: {}, A new Device(id = {}) detected.",
                         new DateTime().toLocalDateTime().toString(), id);
-                //test
-                emitDisactiveAlert(id);
-                try {
-                    Thread.sleep(5*1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                emitActiveAlert(id);
-                //emitUpdateState(id, State.ACTIVE);
             } else if (deviceMissCounters.get(id) > diedThreshold) {
                 emitDeviceStateLog(id, State.ACTIVE);
                 emitActiveAlert(id);
