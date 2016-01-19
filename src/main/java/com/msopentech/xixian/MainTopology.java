@@ -10,6 +10,7 @@ import com.microsoft.eventhubs.spout.EventHubSpout;
 import com.microsoft.eventhubs.spout.EventHubSpoutConfig;
 import com.msopentech.xixian.bolt.DeviceStateDetectBolt;
 import com.msopentech.xixian.bolt.GatewayBolt;
+import com.msopentech.xixian.bolt.IdTransformBolt;
 import com.msopentech.xixian.bolt.JdbcStoreBolt;
 import org.apache.storm.jdbc.common.Column;
 import org.apache.storm.jdbc.common.ConnectionProvider;
@@ -28,16 +29,25 @@ public class MainTopology {
     private static final String TOPOLOGY_NAME = "Xixian";
     private boolean runLocal = true;
     private int numWorkers;
-    private static final String DATA_INSERT_SQL = "INSERT INTO data(deviceid, datatime, datatype_id, datavalue) " +
+    private static final Long HEART_BEAT_INTERVAL_IN_SECS = 5L;
+    private static final String DATA_INSERT_SQL = "INSERT INTO data(device_id, datatime, datatype_id, datavalue) " +
             "VALUES (?, ?, ?, ?)";
-    private static final String ALERT_INSERT_SQL = "INSERT INTO alert(deviceid, title, comments, " +
+    private static final String ALERT_INSERT_SQL = "INSERT INTO alert(device_id, title, comments, " +
             "createtime, state, level)" + "VALUES (?, ?, ?, ?, ?, ?)";
-    private static final String LOG_INSERT_SQL = "INSERT INTO devicelog(deviceid, logtime, logtitle, comments)" +
+    private static final String LOG_INSERT_SQL = "INSERT INTO devicelog(device_id, logtime, logtitle, comments)" +
             "VALUES (?, ?, ?, ?)";
     private static final String ALERT_UPDATE_SQL = "UPDATE alert SET endtime = ? WHERE id = (SELECT max(id) " +
-            " FROM alert WHERE deviceid = ? )";
-    private static final String UPDATE_STATE_SQL = "UPDATE devices SET state = ? WHERE deviceid = ? ";
+            " FROM alert WHERE device_id = ? )";
+    private static final String UPDATE_STATE_SQL = "UPDATE devices SET state = ? WHERE device_id = ? ";
 
+    private ConnectionProvider connectionProvider;
+
+    public ConnectionProvider getConnectionProvider() {
+        if (connectionProvider == null) {
+            connectionProvider = new HikariCPConnectionProvider(getAzureSQLConfig());
+        }
+        return connectionProvider;
+    }
 
     private EventHubSpoutConfig initEventHubConfig(Boolean enableTimeFilter) {
         Properties eventHubProps = PropertyUtil.loadProperties("eventhub");
@@ -67,20 +77,19 @@ public class MainTopology {
     }
 
     private JdbcStoreBolt buildJdbcStoreBolt() {
-        ConnectionProvider connectionProvider = new HikariCPConnectionProvider(getAzureSQLConfig());
-        JdbcStoreBolt jdbcStoreBolt = new JdbcStoreBolt(connectionProvider);
+        JdbcStoreBolt jdbcStoreBolt = new JdbcStoreBolt(getConnectionProvider());
 
         List<Column> schemaColumns = new ArrayList<Column>();
-        schemaColumns.add(new Column("deviceid", Types.VARCHAR));
+        schemaColumns.add(new Column("device_id", Types.INTEGER));
         schemaColumns.add(new Column("datatime", Types.TIMESTAMP));
         schemaColumns.add(new Column("datatype_id", Types.INTEGER));
-        schemaColumns.add(new Column("datavalue", Types.DOUBLE));
+        schemaColumns.add(new Column("datavalue", Types.FLOAT));
         SimpleJdbcMapper dataMapper = new SimpleJdbcMapper(schemaColumns);
         jdbcStoreBolt.register(Tag.Measurements, dataMapper, DATA_INSERT_SQL);
 
 
         schemaColumns = new ArrayList<Column>();
-        schemaColumns.add(new Column("deviceid", Types.VARCHAR));
+        schemaColumns.add(new Column("device_id", Types.INTEGER));
         schemaColumns.add(new Column("title", Types.VARCHAR));
         schemaColumns.add(new Column("comments", Types.VARCHAR));
         schemaColumns.add(new Column("createtime", Types.TIMESTAMP));
@@ -90,7 +99,7 @@ public class MainTopology {
         jdbcStoreBolt.register(Tag.DisactiveAlert, alertInsertMapper, ALERT_INSERT_SQL);
 
         schemaColumns = new ArrayList<Column>();
-        schemaColumns.add(new Column("deviceid", Types.VARCHAR));
+        schemaColumns.add(new Column("device_id", Types.INTEGER));
         schemaColumns.add(new Column("logtime", Types.TIMESTAMP));
         schemaColumns.add(new Column("logtitle", Types.VARCHAR));
         schemaColumns.add(new Column("comments", Types.VARCHAR));
@@ -99,13 +108,13 @@ public class MainTopology {
 
         schemaColumns = new ArrayList<Column>();
         schemaColumns.add(new Column("endtime", Types.TIMESTAMP));
-        schemaColumns.add(new Column("deviceid", Types.VARCHAR));
+        schemaColumns.add(new Column("device_id", Types.INTEGER));
         SimpleJdbcMapper alertUpdateMapper = new SimpleJdbcMapper(schemaColumns);
         jdbcStoreBolt.register(Tag.ActiveAlert, alertUpdateMapper, ALERT_UPDATE_SQL);
 
         schemaColumns = new ArrayList<>();
         schemaColumns.add(new Column("state", Types.VARCHAR));
-        schemaColumns.add(new Column("deviceid", Types.VARCHAR));
+        schemaColumns.add(new Column("device_id", Types.INTEGER));
         SimpleJdbcMapper updateStateMapper = new SimpleJdbcMapper(schemaColumns);
         jdbcStoreBolt.register(Tag.DeviceState, updateStateMapper, UPDATE_STATE_SQL);
 
@@ -121,11 +130,13 @@ public class MainTopology {
         EventHubSpout eventHubSpout = new EventHubSpout(config);
 
         JdbcStoreBolt jdbcStoreBolt = buildJdbcStoreBolt();
-        DeviceStateDetectBolt stateDetectBolt = new DeviceStateDetectBolt(150);
+        DeviceStateDetectBolt stateDetectBolt = new DeviceStateDetectBolt(HEART_BEAT_INTERVAL_IN_SECS);
 
         builder.setSpout("EventHubSpout", eventHubSpout, numWorkers);
-        builder.setBolt("GatewayBolt", new GatewayBolt(), numWorkers)
+        builder.setBolt("IdTransformBolt", new IdTransformBolt(getConnectionProvider()), numWorkers)
                 .localOrShuffleGrouping("EventHubSpout");
+        builder.setBolt("GatewayBolt", new GatewayBolt(), numWorkers)
+                .localOrShuffleGrouping("IdTransformBolt");
         builder.setBolt("DeviceStateDetectBolt",stateDetectBolt, 2)
                 .fieldsGrouping("GatewayBolt", GatewayBolt.DEVICE_ID_STREAM, new Fields("id"));
         builder.setBolt("JdbcStoreBolt", jdbcStoreBolt, 1)

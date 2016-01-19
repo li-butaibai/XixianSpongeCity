@@ -19,9 +19,9 @@ import java.util.*;
  */
 public class JdbcStoreBolt extends AbstractJdbcBolt{
 
-    protected Map<Tag, JdbcMapper> mappers;
-    protected Map<Tag, String> sqlStatements;
-    protected Set<Tag> registeredTags;
+    private Map<Tag, JdbcMapper> mappers;
+    private Map<Tag, String> sqlStatements;
+    private Set<Tag> registeredTags;
     private static final int DEFAULT_QUERY_TIMEOUT_SECS = 10;
     private static final Logger LOGGER = LoggerFactory.getLogger(JdbcStoreBolt.class);
 
@@ -29,9 +29,9 @@ public class JdbcStoreBolt extends AbstractJdbcBolt{
     public JdbcStoreBolt(ConnectionProvider connectionProvider, int timeoutSecs) {
         super(connectionProvider);
         this.queryTimeoutSecs = timeoutSecs;
-        mappers = new HashMap<Tag, JdbcMapper>();
-        sqlStatements = new HashMap<Tag, String>();
-        registeredTags = new TreeSet<Tag>();
+        mappers = new HashMap<>();
+        sqlStatements = new HashMap<>();
+        registeredTags = new TreeSet<>();
     }
 
     public JdbcStoreBolt(ConnectionProvider connectionProvider) {

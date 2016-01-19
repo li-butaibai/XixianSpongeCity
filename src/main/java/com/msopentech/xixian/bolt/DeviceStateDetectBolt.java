@@ -34,7 +34,7 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
     public static final int DEFAULT_DIED_THRESHOLD = 5;
     private OutputCollector collector;
     private int diedThreshold;
-    private Map<String, Integer> deviceMissCounters;
+    private Map<Integer, Integer> deviceMissCounters;
 
     private enum State {
         ACTIVE("active"), DISACTIVE("disactive"), UNKNOWN("unknown"), ONLINE("online"), OFFLINE("offline");
@@ -56,7 +56,7 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
     public DeviceStateDetectBolt(long detectInterval, int diedThreshold) {
         this.interval = detectInterval;
         this.diedThreshold = diedThreshold;
-        deviceMissCounters = new HashMap<String, Integer>();
+        deviceMissCounters = new HashMap<>();
     }
 
     @Override
@@ -67,8 +67,8 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
     @Override
     public void execute(Tuple tuple) {
         if (isTickTuple(tuple)) {
-            for (String id : deviceMissCounters.keySet()) {
-                Integer counter = deviceMissCounters.get(id);
+            for (Integer id : deviceMissCounters.keySet()) {
+                int counter = deviceMissCounters.get(id);
                 if (counter == diedThreshold) {
                     emitUpdateState(id, State.OFFLINE);
                     emitDeviceStateLog(id, State.DISACTIVE);
@@ -79,25 +79,25 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
             }
 
         } else {
-            String id = tuple.getStringByField("id");
+            Integer id = tuple.getIntegerByField("id");
             if (!deviceMissCounters.containsKey(id)) {
                 emitDeviceStateLog(id, State.ACTIVE);
+                emitUpdateState(id, State.ONLINE);
                 LOGGER.debug("Time: {}, A new Device(id = {}) detected.",
                         new DateTime().toLocalDateTime().toString(), id);
             } else if (deviceMissCounters.get(id) > diedThreshold) {
                 emitDeviceStateLog(id, State.ACTIVE);
                 emitActiveAlert(id);
+                emitUpdateState(id, State.ONLINE);
                 LOGGER.debug("Time: {}, The Device(id = {}) restarted.",
                         new DateTime().toLocalDateTime().toString(), id);
             }
-
-            emitUpdateState(id, State.ONLINE);
             deviceMissCounters.put(id, 0);
         }
         collector.ack(tuple);
     }
 
-    private void emitDeviceStateLog(String id, State state) {
+    private void emitDeviceStateLog(Integer id, State state) {
         String time =  new DateTime().toLocalDateTime().toString();
         String comment, title;
         if (state == State.ACTIVE) {
@@ -112,7 +112,7 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
         collector.emit(DEVICELOG_STREAM, values);
     }
 
-    private void emitDisactiveAlert(String id) {
+    private void emitDisactiveAlert(Integer id) {
         String time =  new DateTime().toLocalDateTime().toString();
         Values values = new Values(Tag.DisactiveAlert, id, TITLE_ALERT,
                 String.format(COMMENT_OFFLINE_FORMAT, id, time), new Date().getTime(),
@@ -120,7 +120,7 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
         collector.emit(ALERT_INSERT_STREAM, values);
     }
 
-    private void emitActiveAlert(String id) {
+    private void emitActiveAlert(Integer id) {
         String time =  new DateTime().toLocalDateTime().toString();
         Values values = new Values(Tag.ActiveAlert, id, TITLE_ALERT,
                 String.format(COMMENT_OFFLINE_FORMAT, id, time), 0,
@@ -129,19 +129,19 @@ public class DeviceStateDetectBolt extends BaseTimedRichBolt {
     }
 
 
-    private void emitUpdateState(String id, State state) {
+    private void emitUpdateState(Integer id, State state) {
         Values values = new Values(Tag.DeviceState, id, state.toString());
         collector.emit(STATE_UPDATE_STREAM, values);
     }
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
-        outputFieldsDeclarer.declareStream(ALERT_INSERT_STREAM, new Fields("tag", "deviceid",
+        outputFieldsDeclarer.declareStream(ALERT_INSERT_STREAM, new Fields("tag", "device_id",
                 "title", "comments", "createtime", "endtime", "state", "level"));
-        outputFieldsDeclarer.declareStream(ALERT_UPDATE_STREAM, new Fields("tag", "deviceid",
+        outputFieldsDeclarer.declareStream(ALERT_UPDATE_STREAM, new Fields("tag", "device_id",
                 "title", "comments", "createtime", "endtime", "state", "level"));
-        outputFieldsDeclarer.declareStream(DEVICELOG_STREAM, new Fields("tag", "deviceid", "logtime",
+        outputFieldsDeclarer.declareStream(DEVICELOG_STREAM, new Fields("tag", "device_id", "logtime",
                 "logtitle", "comments"));
-        outputFieldsDeclarer.declareStream(STATE_UPDATE_STREAM, new Fields("tag", "deviceid", "state"));
+        outputFieldsDeclarer.declareStream(STATE_UPDATE_STREAM, new Fields("tag", "device_id", "state"));
     }
 }

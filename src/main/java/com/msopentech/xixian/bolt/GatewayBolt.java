@@ -39,7 +39,6 @@ public class GatewayBolt extends BaseRichBolt {
     private static final String WIND_SPEED = "windspeed";
     private static final String SOLAR_RADIATION = "solarradiation";
     private static final String SOIL_HUMID = "soilhumid";
-
     private OutputCollector collector;
 
     @Override
@@ -53,7 +52,8 @@ public class GatewayBolt extends BaseRichBolt {
         LOGGER.debug("Received Msg: {}", msg);
         JSONObject jsonMsg = new JSONObject(msg);
 
-        String id = jsonMsg.getString(DEVICE_ID);
+        //转换之后id为Integer类型
+        Integer id = jsonMsg.getInt(DEVICE_ID);
         collector.emit(DEVICE_ID_STREAM, new Values(id));
 
         //If the Msg contains measurements then parse measurements and send.
@@ -94,6 +94,6 @@ public class GatewayBolt extends BaseRichBolt {
     @Override
     public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
         outputFieldsDeclarer.declareStream(DEVICE_ID_STREAM, new Fields("id"));
-        outputFieldsDeclarer.declareStream(MEASUREMENTS_STREAM, new Fields("tag", "deviceid", "datatime", "datatype_id", "datavalue"));
+        outputFieldsDeclarer.declareStream(MEASUREMENTS_STREAM, new Fields("tag", "device_id", "datatime", "datatype_id", "datavalue"));
     }
 }
