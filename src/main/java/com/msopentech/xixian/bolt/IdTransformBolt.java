@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * 根据token获取设备Id
  * Created by v-wajie on 1/5/2016.
  */
 public class IdTransformBolt extends AbstractJdbcBolt {

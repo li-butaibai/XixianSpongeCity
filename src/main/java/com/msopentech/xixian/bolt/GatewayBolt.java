@@ -19,6 +19,7 @@ import java.util.Date;
 import java.util.Map;
 
 /**
+ * 根据不同的信息类型，分发到下一个Bolt中处理。
  * Created by v-wajie on 12/30/2015.
  */
 public class GatewayBolt extends BaseRichBolt {

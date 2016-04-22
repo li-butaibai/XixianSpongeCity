@@ -22,6 +22,7 @@ import java.sql.Types;
 import java.util.*;
 
 /**
+ * 在MainTopology中配置Storm的各个节点。
  * Created by v-wajie on 12/30/2015.
  */
 public class MainTopology {
@@ -30,6 +31,8 @@ public class MainTopology {
     private boolean runLocal = true;
     private int numWorkers;
     private static final Long HEART_BEAT_INTERVAL_IN_SECS = 5L;
+
+    //数据库语句
     private static final String DATA_INSERT_SQL = "INSERT INTO data(device_id, datatime, datatype_id, datavalue) " +
             "VALUES (?, ?, ?, ?)";
     private static final String ALERT_INSERT_SQL = "INSERT INTO alert(device_id, title, comments, " +
@@ -40,6 +43,7 @@ public class MainTopology {
             " FROM alert WHERE device_id = ? )";
     private static final String UPDATE_STATE_SQL = "UPDATE devices SET state = ? WHERE device_id = ? ";
 
+    //数据库连接
     private ConnectionProvider connectionProvider;
 
     public ConnectionProvider getConnectionProvider() {
@@ -49,6 +53,10 @@ public class MainTopology {
         return connectionProvider;
     }
 
+    /**
+     * 初始化EventHub配置
+     * @param enableTimeFilter 是否启动过滤器（只接受当前时间开始的信息）
+     * */
     private EventHubSpoutConfig initEventHubConfig(Boolean enableTimeFilter) {
         Properties eventHubProps = PropertyUtil.loadProperties("eventhub");
         String username = eventHubProps.getProperty("username");
@@ -67,6 +75,9 @@ public class MainTopology {
         return config;
     }
 
+    /**
+     * 从配置文件sqlserver.properties中加载SQL Server配置
+     * */
     private Map<String, Object> getAzureSQLConfig() {
         Properties sqlServerProps = PropertyUtil.loadProperties("sqlserver");
         Map<String, Object> map = new HashMap<String, Object>();
@@ -76,6 +87,9 @@ public class MainTopology {
         return map;
     }
 
+    /**
+     * 创建存储到数据库的Bolt节点
+     * */
     private JdbcStoreBolt buildJdbcStoreBolt() {
         JdbcStoreBolt jdbcStoreBolt = new JdbcStoreBolt(getConnectionProvider());
 
@@ -121,6 +135,9 @@ public class MainTopology {
         return jdbcStoreBolt;
     }
 
+    /**
+     * 创建Storm Topology
+     * */
     private StormTopology buildTopology() {
         TopologyBuilder builder = new TopologyBuilder();
 

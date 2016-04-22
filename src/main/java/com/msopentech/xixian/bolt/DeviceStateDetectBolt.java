@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 用于检测Device的状态
  * Created by v-wajie on 12/30/2015.
  */
 public class DeviceStateDetectBolt extends BaseTimedRichBolt {

@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 /**
+ * 加载各种配置文件
  * Created by v-wajie on 2015/11/24.
  */
 public class PropertyUtil {

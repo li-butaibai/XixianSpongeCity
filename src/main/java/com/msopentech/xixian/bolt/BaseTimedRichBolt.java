@@ -8,6 +8,7 @@ import backtype.storm.tuple.Tuple;
 import java.util.Map;
 
 /**
+ * 基于周期性时间的定时Bolt
  * Created by v-wajie on 2015/11/26.
  */
 public abstract class BaseTimedRichBolt extends BaseRichBolt {
